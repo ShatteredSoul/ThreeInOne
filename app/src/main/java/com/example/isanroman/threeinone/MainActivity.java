@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import static android.R.attr.name;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        CharSequence start = "Money: " + Currency.getTotalCurrency();
+        TextView name = (TextView)findViewById(R.id.totalMoney);
+        name.setText(start);
 
         Button sButton = (Button)findViewById(R.id.shipButton);
         sButton.setOnClickListener(onClickListener);
