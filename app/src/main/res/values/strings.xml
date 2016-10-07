@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ThreeInOne</string>
+    <string name="ship">Ship</string>
+    <string name="player">Player</string>
+    <string name="mines">Mines</string>
+    <string name="shop">Shop</string>
 </resources>

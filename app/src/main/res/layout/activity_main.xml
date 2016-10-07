@@ -27,6 +27,18 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"/>
 
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/totalMoney"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginEnd="4dp"
+        />
+
     <TextView
         android:id="@+id/playerName"
         android:layout_width="wrap_content"
@@ -57,28 +69,28 @@
             android:id="@+id/shipButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ship"
+            android:text="@string/ship"
             android:layout_weight="1"/>
 
         <Button
             android:id="@+id/playerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Player"
+            android:text="@string/player"
             android:layout_weight="1"/>
 
         <Button
             android:id="@+id/mineButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mines"
+            android:text="@string/mines"
             android:layout_weight="1"/>
 
         <Button
             android:id="@+id/shopButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Shop"
+            android:text="@string/shop"
             android:layout_weight="1"/>
 </LinearLayout>
 

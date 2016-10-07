@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
 
         Button shButton = (Button)findViewById(R.id.shopButton);
         shButton.setOnClickListener(onClickListener);
+
+        ImageButton eButton = (ImageButton)findViewById(R.id.economicsButton);
+        eButton.setOnClickListener(onClickListener);
+
+        ImageButton uButton = (ImageButton)findViewById(R.id.universeButton);
+        uButton.setOnClickListener(onClickListener);
+
+        ImageButton seButton = (ImageButton)findViewById(R.id.settingsButton);
+        seButton.setOnClickListener(onClickListener);
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -45,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.mineButton:
                     break;
                 case R.id.shopButton:
+                    break;
+                case R.id.economicsButton:
+                    break;
+                case R.id.universeButton:
+                    break;
+                case R.id.settingsButton:
                     break;
             }
         }
