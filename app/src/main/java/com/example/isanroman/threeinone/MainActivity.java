@@ -1,16 +1,12 @@
 package com.example.isanroman.threeinone;
 
-
-
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,11 +46,9 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch(v.getId()){
                 case R.id.shipButton:
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    ListFragmentView listFragmentView = new ListFragmentView();
-                    fragmentTransaction.add(R.id.shipButton,listFragmentView);
-                    fragmentTransaction.commit();
+                    ListFragmentView.setContent(R.array.items);
+                    Intent i = new Intent(MainActivity.this,FragmentView.class);
+                    startActivity(i);
                     break;
                 case R.id.playerButton:
                     break;
