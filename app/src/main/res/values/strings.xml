@@ -4,25 +4,27 @@
     <string name="player">Player</string>
     <string name="mines">Mines</string>
     <string name="shop">Shop</string>
+    <string name="back">Back</string>
+    <string name="shipTab">Ship Upgrades</string>
+    <string name="playerTab">Player Upgrades</string>
+    <string name="mineTab">Mine Upgrades</string>
 
-    <string-array name="items">
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-        <item>item4</item>
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-        <item>item4</item>
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-        <item>item4</item>
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-        <item>item4</item>
+    <string-array name="shipItems">
+    </string-array>
 
+    <string-array name="shipDesc">
+    </string-array>
+
+    <string-array name="playerItems">
+    </string-array>
+
+    <string-array name="playerDesc">
+    </string-array>
+
+    <string-array name="mineItems">
+    </string-array>
+
+    <string-array name="mineDesc">
     </string-array>
 
 </resources>

@@ -46,13 +46,19 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch(v.getId()){
                 case R.id.shipButton:
-                    ListFragmentView.setContent(R.array.items);
-                    Intent i = new Intent(MainActivity.this,FragmentView.class);
-                    startActivity(i);
+                    ListFragmentView.setContent(R.string.shipTab);
+                    Intent si = new Intent(MainActivity.this,FragmentView.class);
+                    startActivity(si);
                     break;
                 case R.id.playerButton:
+                    ListFragmentView.setContent(R.string.playerTab);
+                    Intent pi = new Intent(MainActivity.this, FragmentView.class);
+                    startActivity(pi);
                     break;
                 case R.id.mineButton:
+                    ListFragmentView.setContent(R.string.mineTab);
+                    Intent mi = new Intent(MainActivity.this, FragmentView.class);
+                    startActivity(mi);
                     break;
                 case R.id.shopButton:
                     break;
