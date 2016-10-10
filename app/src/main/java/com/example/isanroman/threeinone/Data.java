@@ -8,6 +8,7 @@ public class Data {
 
     private String name;
     private String id;
+    private static int imageId[] = {R.drawable.image};
 
     public Data(String name, String id){
         this.name = name;
@@ -28,5 +29,9 @@ public class Data {
 
     public void setId(String id){
         this.id = id;
+    }
+
+    public static int getImageId(int position){
+        return imageId[position];
     }
 }

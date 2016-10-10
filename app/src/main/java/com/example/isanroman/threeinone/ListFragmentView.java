@@ -1,5 +1,6 @@
 package com.example.isanroman.threeinone;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
@@ -7,6 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +30,7 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.list_view_fragment, container, false);
+       return inflater.inflate(R.layout.list_view_fragment, container, false);
     }
 
     @Override
@@ -46,6 +51,16 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+        ImageView image = (ImageView)view.findViewById(R.id.item_image);
+        image.setImageResource(R.drawable.image);
+
+        Button button = (Button)view.findViewById(R.id.deleteButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Button Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public static void setContent(int tab){

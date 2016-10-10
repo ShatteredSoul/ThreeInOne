@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -51,7 +52,7 @@ public class CustomAdapter extends BaseAdapter{
         TextView descr = (TextView)convertView.findViewById(R.id.list_item_description);
         Button deleteButton = (Button)convertView.findViewById(R.id.deleteButton);
 
-        Data row_pos = rowItem.get(position);
+        final Data row_pos = rowItem.get(position);
         name.setText(row_pos.getName());
         descr.setText(row_pos.getId());
         deleteButton.setText(row_pos.getId());

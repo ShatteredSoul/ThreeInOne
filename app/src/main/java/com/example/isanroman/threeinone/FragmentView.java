@@ -1,5 +1,6 @@
 package com.example.isanroman.threeinone;
 
+import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.TextView;
  */
 
 public class FragmentView extends FragmentActivity{
+
+    private CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
