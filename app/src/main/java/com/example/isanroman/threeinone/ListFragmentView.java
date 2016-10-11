@@ -1,5 +1,6 @@
 package com.example.isanroman.threeinone;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -47,9 +50,11 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        ImageView imageView = (ImageView)getActivity().findViewById(R.id.eImage); // this is returning null
+        imageView.setImageResource(R.drawable.image_lens);
 
-        Button button = (Button)view.findViewById(R.id.deleteButton);
+        Button button = (Button) view.findViewById(R.id.deleteButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
