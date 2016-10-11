@@ -1,6 +1,5 @@
 package com.example.isanroman.threeinone;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
@@ -9,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -51,8 +48,6 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-        ImageView image = (ImageView)view.findViewById(R.id.item_image);
-        image.setImageResource(R.drawable.image);
 
         Button button = (Button)view.findViewById(R.id.deleteButton);
         button.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +76,9 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
         }else if(contextTitle == R.string.mineTab){
             title = getResources().getStringArray(R.array.mineItems);
             desc = getResources().getStringArray(R.array.mineDesc);
+        }else if(contextTitle == R.string.economicsTab){
+            title = getResources().getStringArray(R.array.economicsItems);
+            desc = getResources().getStringArray(R.array.economicsPrice);
         }
     }
 }

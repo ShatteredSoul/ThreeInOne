@@ -1,6 +1,5 @@
 package com.example.isanroman.threeinone;
 
-import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;

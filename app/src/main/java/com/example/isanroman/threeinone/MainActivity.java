@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.shopButton:
                     break;
                 case R.id.economicsButton:
+                    ListFragmentView.setContent(R.string.economicsTab);
+                    Intent ei = new Intent(MainActivity.this, EconomicsActivity.class);
+                    startActivity(ei);
                     break;
                 case R.id.universeButton:
                     break;

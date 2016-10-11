@@ -8,6 +8,7 @@
     <string name="shipTab">Ship Upgrades</string>
     <string name="playerTab">Player Upgrades</string>
     <string name="mineTab">Mine Upgrades</string>
+    <string name="economicsTab">Economics</string>
 
     <string-array name="shipItems">
         <item>1</item>
@@ -51,6 +52,14 @@
     </string-array>
 
     <string-array name="mineDesc">
+    </string-array>
+
+    <string-array name="economicsItems">
+
+    </string-array>
+
+    <string-array name="economicsPrice">
+
     </string-array>
 
 </resources>
