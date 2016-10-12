@@ -1,10 +1,13 @@
 package com.example.isanroman.threeinone;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -26,7 +29,8 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
     private static String[] title, desc;
 
     CustomAdapter adapter;
-    private List<Data> rowItems;
+    private static List<Data> rowItems;
+    private static int position;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -50,15 +54,15 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        ImageView imageView = (ImageView)getActivity().findViewById(R.id.eImage); // this is returning null
-        imageView.setImageResource(R.drawable.image_lens);
-
+    public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
         Button button = (Button) view.findViewById(R.id.deleteButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Button Clicked", Toast.LENGTH_SHORT).show();
+                setPosition(position);
+                Intent intent = new Intent(getActivity(),EconomicsPurchase.class);
+                startActivity(intent);
             }
         });
     }
@@ -69,6 +73,18 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
 
     public static int getContent(){
         return contextTitle;
+    }
+
+    public static List<Data> getListData(){
+        return rowItems;
+    }
+
+    public static void setPosition(int i){
+        position = i;
+    }
+
+    public static int getPosition(){
+        return position;
     }
 
     public void setArrays(){

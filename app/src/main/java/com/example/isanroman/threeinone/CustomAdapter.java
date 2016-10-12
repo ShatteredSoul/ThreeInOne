@@ -55,7 +55,7 @@ public class CustomAdapter extends BaseAdapter{
         final Data row_pos = rowItem.get(position);
         name.setText(row_pos.getName());
         descr.setText(row_pos.getId());
-        deleteButton.setText(row_pos.getId());
+        deleteButton.setText(R.string.buy_sell);
 
         return convertView;
     }

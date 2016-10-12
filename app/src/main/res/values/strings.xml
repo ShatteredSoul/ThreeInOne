@@ -9,6 +9,13 @@
     <string name="playerTab">Player Upgrades</string>
     <string name="mineTab">Mine Upgrades</string>
     <string name="economicsTab">Economics</string>
+    <string name="name">Name</string>
+    <string name="price">Buy Price</string>
+    <string name="buy_sell">Buy/Sell</string>
+    <string name="quantity">Inventory</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+    <string name="enter_value">Enter Value</string>
 
     <string-array name="shipItems">
         <item>1</item>
@@ -107,35 +114,29 @@
     </string-array>
 
     <string-array name="economicsItems">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
+        <item>Copper</item>
+        <item>Aluminum</item>
+        <item>Iron</item>
+        <item>Silver</item>
+        <item>Tungsten</item>
+        <item>Osmium</item>
+        <item>Platinum</item>
+        <item>Gold</item>
+        <item>Diamond</item>
+        <item>Uranium</item>
     </string-array>
 
     <string-array name="economicsPrice">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
+        <item>1.75</item>
+        <item>0.50</item>
+        <item>0.24</item>
+        <item>236.76</item>
+        <item>19.85</item>
+        <item>5909.00</item>
+        <item>1480.00</item>
+        <item>1259.23</item>
+        <item>66867353300.80</item>
+        <item>31.10</item>
     </string-array>
 
 </resources>
