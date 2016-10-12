@@ -18,8 +18,8 @@ import java.util.List;
 
 public class CustomAdapter extends BaseAdapter{
 
-    Context context;
-    List<Data> rowItem;
+    private Context context;
+    private List<Data> rowItem;
 
     CustomAdapter(Context context, List<Data> rowItem){
         this.context = context;
