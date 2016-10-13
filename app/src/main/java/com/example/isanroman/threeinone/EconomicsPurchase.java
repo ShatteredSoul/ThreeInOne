@@ -99,10 +99,10 @@ public class EconomicsPurchase extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 if(Inventory.getMoney() >= buyAmount){
-                    Toast.makeText(EconomicsPurchase.this, "Purchace Successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EconomicsPurchase.this, "Purchase Successful", Toast.LENGTH_SHORT).show();
                     Inventory.subtractMoney(buyAmount);
                     Inventory.addResource(row_pos.getName(), buyQuantity);
-                }else Toast.makeText(EconomicsPurchase.this, "Purchace UnSuccessful", Toast.LENGTH_SHORT).show();
+                }else Toast.makeText(EconomicsPurchase.this, "Purchase UnSuccessful", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -119,6 +119,6 @@ public class EconomicsPurchase extends AppCompatActivity{
 
         textName.setText(row_pos.getName());
         textPrice.setText(row_pos.getId());
-        textQuantity.setText(Inventory.getResourceAmount(row_pos.getName()));
+        textQuantity.setText("Something");
     }
 }

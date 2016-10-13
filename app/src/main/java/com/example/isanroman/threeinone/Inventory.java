@@ -55,6 +55,9 @@ public class Inventory {
     }
 
     public static int getResourceAmount(String name){
-        return userResources.get(name);
+        if(userResources.get(name) == null)
+            return 0;
+        else
+            return userResources.get(name);
     }
 }
