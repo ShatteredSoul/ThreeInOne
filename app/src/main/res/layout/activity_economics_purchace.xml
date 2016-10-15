@@ -57,10 +57,19 @@
         android:textSize="18sp"/>
 
     <TextView
-        android:id="@+id/resourceQuantity"
+        android:id="@+id/resourceMoney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/resourcePlayerQuantity"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/resourceQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resourceMoney"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textSize="18sp"/>
@@ -142,5 +151,13 @@
         android:layout_below="@id/sellTag"
         android:layout_marginTop="10dp"
         android:text="@string/sell"/>
+
+    <Button
+        android:id="@+id/epBackButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sellButton"
+        android:layout_marginTop="20dp"
+        android:text="@string/back"/>
 
 </RelativeLayout>

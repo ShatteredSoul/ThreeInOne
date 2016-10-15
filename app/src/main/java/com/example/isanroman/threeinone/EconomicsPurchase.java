@@ -1,6 +1,5 @@
 package com.example.isanroman.threeinone;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -11,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +20,7 @@ import java.util.List;
 public class EconomicsPurchase extends AppCompatActivity{
 
     private List<Data> row_items;
+    private static Data row_pos;
     private static double buyAmount, sellAmount;
     private static int buyQuantity, sellQuantity;
 
@@ -29,15 +30,17 @@ public class EconomicsPurchase extends AppCompatActivity{
         setContentView(R.layout.activity_economics_purchace);
 
         row_items = ListFragmentView.getListData();
-        final Data row_pos = row_items.get(ListFragmentView.getPosition());
+        row_pos = row_items.get(ListFragmentView.getPosition());
 
         TextView textName = (TextView)findViewById(R.id.resourceName);
         TextView textPrice = (TextView)findViewById(R.id.resourcePrice);
         TextView textQuantity = (TextView)findViewById(R.id.resourceQuantity);
+        TextView textMoney = (TextView)findViewById(R.id.resourceMoney);
         final TextView buyTotal = (TextView)findViewById(R.id.resourceTotalPrice);
         final TextView sellTotal = (TextView)findViewById(R.id.resourceTotalSellPrice);
         Button buyButton = (Button)findViewById(R.id.buyButton);
         Button sellButton = (Button)findViewById(R.id.sellButton);
+        Button backButton = (Button)findViewById(R.id.epBackButton);
 
         final EditText editText = (EditText)findViewById(R.id.resourceSetQuantity);
         editText.addTextChangedListener(new TextWatcher() {
@@ -99,10 +102,12 @@ public class EconomicsPurchase extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 if(Inventory.getMoney() >= buyAmount){
-                    Toast.makeText(EconomicsPurchase.this, "Purchase Successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EconomicsPurchase.this, R.string.buy_successful, Toast.LENGTH_SHORT).show();
                     Inventory.subtractMoney(buyAmount);
                     Inventory.addResource(row_pos.getName(), buyQuantity);
-                }else Toast.makeText(EconomicsPurchase.this, "Purchase UnSuccessful", Toast.LENGTH_SHORT).show();
+                    Prices.setMarketPricesIncrease(row_pos.getName(), buyQuantity);
+                    updateUI();
+                }else Toast.makeText(EconomicsPurchase.this, R.string.buy_unsuccessful, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -110,15 +115,54 @@ public class EconomicsPurchase extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 if(Inventory.getResourceAmount(row_pos.getName()) >= sellQuantity){
-                    Toast.makeText(EconomicsPurchase.this, "Sell Successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EconomicsPurchase.this, R.string.sell_successful, Toast.LENGTH_SHORT).show();
                     Inventory.addMoney(sellAmount);
                     Inventory.removeResource(row_pos.getName(), sellQuantity);
-                }else Toast.makeText(EconomicsPurchase.this, "Sell UnSuccessful", Toast.LENGTH_SHORT).show();
+                    Prices.setMarketPricesDecrease(row_pos.getName(), sellQuantity);
+                    updateUI();
+                }else Toast.makeText(EconomicsPurchase.this, R.string.sell_unsuccessful, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String titles[] = getResources().getStringArray(R.array.economicsItems);
+                String desc[] = new String[10];
+                for(int i = 0; i < 10; i++){
+                    desc[i] = Double.toString(Prices.getMarketPrices(titles[i]));
+                }
+                List<Data> data = new ArrayList<Data>();
+                for(int i = 0; i < titles.length; i++){
+                    Data temp = new Data(titles[i], desc[i]);
+                    data.add(temp);
+                }
+                ListFragmentView.refreshedData(data);
+                onBackPressed();
             }
         });
 
         textName.setText(row_pos.getName());
         textPrice.setText(row_pos.getId());
-        textQuantity.setText("Something");
+        textMoney.setText(Double.toString(Inventory.getMoney()));
+        boolean test = true;
+        try{
+            textQuantity.setText(Inventory.getResourceAmount(row_pos.getName()));
+            test = false;
+        }catch(RuntimeException e){e.printStackTrace();}
+
+        if(test)
+            textQuantity.setText("0");
+    }
+
+    private void updateUI(){
+        TextView textView = (TextView)findViewById(R.id.resourceQuantity);
+        textView.setText(Integer.toString(Inventory.getResourceAmount(row_pos.getName())));
+
+        TextView textMoney = (TextView)findViewById(R.id.resourceMoney);
+        textMoney.setText(Double.toString(Inventory.getMoney()));
+
+        TextView textPrice = (TextView)findViewById(R.id.resourcePrice);
+        textPrice.setText(Double.toString(Prices.getMarketPrices(row_pos.getName())));
     }
 }

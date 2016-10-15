@@ -16,7 +16,7 @@
     <string name="buy">Buy</string>
     <string name="sell">Sell</string>
     <string name="enter_value">Enter Value</string>
-    <string name="copper">Copper</string>
+    <string name="Copper">Copper</string>
     <string name="Aluminum">Aluminum</string>
     <string name="Iron">Iron</string>
     <string name="Silver">Silver</string>
@@ -26,6 +26,10 @@
     <string name="Gold">Gold</string>
     <string name="Diamond">Diamond</string>
     <string name="Uranium">Uranium</string>
+    <string name="buy_successful">Buy Successful</string>
+    <string name="buy_unsuccessful">Buy Unsuccessful</string>
+    <string name="sell_successful">Sell Successful</string>
+    <string name="sell_unsuccessful">Sell Unsuccessful</string>
 
     <string-array name="shipItems">
 
@@ -44,11 +48,29 @@
     </string-array>
 
     <string-array name="mineItems">
-
+        <item>Copper</item>
+        <item>Aluminum</item>
+        <item>Iron</item>
+        <item>Silver</item>
+        <item>Tungsten</item>
+        <item>Osmium</item>
+        <item>Platinum</item>
+        <item>Gold</item>
+        <item>Diamond</item>
+        <item>Uranium</item>
     </string-array>
 
-    <string-array name="mineDesc">
-
+    <string-array name="mineProd">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
     </string-array>
 
     <string-array name="economicsItems">

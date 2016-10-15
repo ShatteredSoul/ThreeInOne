@@ -1,20 +1,15 @@
 package com.example.isanroman.threeinone;
 
 import android.content.Intent;
-import android.media.Image;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageSwitcher;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,12 +54,16 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Button Clicked", Toast.LENGTH_SHORT).show();
                 setPosition(position);
                 Intent intent = new Intent(getActivity(),EconomicsPurchase.class);
                 startActivity(intent);
             }
         });
+    }
+
+    public static void refreshedData(List<Data> data){
+        rowItems.clear();
+        rowItems.addAll(data);
     }
 
     public static void setContent(int tab){
@@ -96,7 +95,7 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
             desc = getResources().getStringArray(R.array.playerDesc);
         }else if(contextTitle == R.string.mineTab){
             title = getResources().getStringArray(R.array.mineItems);
-            desc = getResources().getStringArray(R.array.mineDesc);
+            desc = getResources().getStringArray(R.array.mineProd);
         }else if(contextTitle == R.string.economicsTab){
             title = getResources().getStringArray(R.array.economicsItems);
             desc = getResources().getStringArray(R.array.economicsPrice);

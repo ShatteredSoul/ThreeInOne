@@ -2,13 +2,13 @@ package com.example.isanroman.threeinone;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -19,7 +19,8 @@ import java.util.List;
 public class CustomAdapter extends BaseAdapter{
 
     private Context context;
-    private List<Data> rowItem;
+    private static List<Data> rowItem;
+    private static String[] rowColors = {"#C87533", "#ADB2BD", "#E6E7E8", "#C0C0C0", "#787C85", "#9090A3", "#E5E4E2", "#FFD700", "#26DCF5", "#5B8a5F"};
 
     CustomAdapter(Context context, List<Data> rowItem){
         this.context = context;
@@ -56,6 +57,15 @@ public class CustomAdapter extends BaseAdapter{
         name.setText(row_pos.getName());
         descr.setText(row_pos.getId());
         deleteButton.setText(R.string.buy_sell);
+
+        if(ListFragmentView.getContent() == R.string.economicsTab) {
+            if (!(Double.parseDouble(row_pos.getId()) == Prices.getMarketPrices(row_pos.getName()))) {
+                descr.setText(Double.toString(Prices.getMarketPrices(row_pos.getName())));
+            } else {
+                descr.setText(row_pos.getId());
+            }
+            convertView.setBackgroundColor(Color.parseColor(rowColors[position]));
+        }
 
         return convertView;
     }
