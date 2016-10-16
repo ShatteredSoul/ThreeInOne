@@ -67,6 +67,12 @@ public class CustomAdapter extends BaseAdapter{
             convertView.setBackgroundColor(Color.parseColor(rowColors[position]));
         }
 
+        if(ListFragmentView.getContent() == R.string.mineTab) {
+            deleteButton.setText(Double.toString(Mines.getCost(row_pos.getName())));
+            convertView.setBackgroundColor(Color.parseColor(rowColors[position]));
+            descr.setText(Double.toString(Mines.getProduction(row_pos.getName())));
+        }
+
         return convertView;
     }
 }

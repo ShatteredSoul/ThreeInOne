@@ -1,5 +1,8 @@
 package com.example.isanroman.threeinone;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -35,7 +38,7 @@ public class EconomicsPurchase extends AppCompatActivity{
         TextView textName = (TextView)findViewById(R.id.resourceName);
         TextView textPrice = (TextView)findViewById(R.id.resourcePrice);
         TextView textQuantity = (TextView)findViewById(R.id.resourceQuantity);
-        TextView textMoney = (TextView)findViewById(R.id.resourceMoney);
+        final TextView textMoney = (TextView)findViewById(R.id.resourceMoney);
         final TextView buyTotal = (TextView)findViewById(R.id.resourceTotalPrice);
         final TextView sellTotal = (TextView)findViewById(R.id.resourceTotalSellPrice);
         Button buyButton = (Button)findViewById(R.id.buyButton);
@@ -106,6 +109,8 @@ public class EconomicsPurchase extends AppCompatActivity{
                     Inventory.subtractMoney(buyAmount);
                     Inventory.addResource(row_pos.getName(), buyQuantity);
                     Prices.setMarketPricesIncrease(row_pos.getName(), buyQuantity);
+                    TextView textView = (TextView)v.findViewById(R.id.list_item_description);// this is a test to see if automatic changes happen to the list fragment
+                    textView.setText(Double.toString(Prices.getMarketPrices(row_pos.getName())));
                     updateUI();
                 }else Toast.makeText(EconomicsPurchase.this, R.string.buy_unsuccessful, Toast.LENGTH_SHORT).show();
             }
@@ -119,6 +124,8 @@ public class EconomicsPurchase extends AppCompatActivity{
                     Inventory.addMoney(sellAmount);
                     Inventory.removeResource(row_pos.getName(), sellQuantity);
                     Prices.setMarketPricesDecrease(row_pos.getName(), sellQuantity);
+                    TextView textView = (TextView)v.findViewById(R.id.list_item_description); //this is a test to see if automatic changes happen to the list fragment
+                    textView.setText(Double.toString(Prices.getMarketPrices(row_pos.getName())));
                     updateUI();
                 }else Toast.makeText(EconomicsPurchase.this, R.string.sell_unsuccessful, Toast.LENGTH_SHORT).show();
             }
@@ -145,14 +152,7 @@ public class EconomicsPurchase extends AppCompatActivity{
         textName.setText(row_pos.getName());
         textPrice.setText(row_pos.getId());
         textMoney.setText(Double.toString(Inventory.getMoney()));
-        boolean test = true;
-        try{
-            textQuantity.setText(Inventory.getResourceAmount(row_pos.getName()));
-            test = false;
-        }catch(RuntimeException e){e.printStackTrace();}
-
-        if(test)
-            textQuantity.setText("0");
+        textQuantity.setText(Integer.toString(Inventory.getResourceAmount(row_pos.getName())));
     }
 
     private void updateUI(){
@@ -164,5 +164,75 @@ public class EconomicsPurchase extends AppCompatActivity{
 
         TextView textPrice = (TextView)findViewById(R.id.resourcePrice);
         textPrice.setText(Double.toString(Prices.getMarketPrices(row_pos.getName())));
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        saveData();
+    }
+
+    public void saveData() {
+        SharedPreferences sp = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+
+        editor.putString("userMoney", Double.toString(Inventory.getMoney()));
+
+        editor.putString("pCopper", Double.toString(Prices.getMarketPrices(getResources().getString(R.string.Copper))));
+        editor.putString("pAluminum", Double.toString(Prices.getMarketPrices(getResources().getString(R.string.Aluminum))));
+        editor.putString("pIron", Double.toString(Prices.getMarketPrices(getResources().getString(R.string.Iron))));
+        editor.putString("pSilver", Double.toString(Prices.getMarketPrices(getResources().getString(R.string.Silver))));
+        editor.putString("pTungsten", Double.toString(Prices.getMarketPrices(getResources().getString(R.string.Tungsten))));
+        editor.putString("pOsmium", Double.toString(Prices.getMarketPrices(getResources().getString(R.string.Osmium))));
+        editor.putString("pPlatinum", Double.toString(Prices.getMarketPrices(getResources().getString(R.string.Platinum))));
+        editor.putString("pGold", Double.toString(Prices.getMarketPrices(getResources().getString(R.string.Gold))));
+        editor.putString("pDiamond", Double.toString(Prices.getMarketPrices(getResources().getString(R.string.Diamond))));
+        editor.putString("pUranium", Double.toString(Prices.getMarketPrices(getResources().getString(R.string.Uranium))));
+
+        editor.putString("iCopper", Integer.toString(Inventory.getResourceAmount(getResources().getString(R.string.Copper))));
+        editor.putString("iAluminum", Integer.toString(Inventory.getResourceAmount(getResources().getString(R.string.Aluminum))));
+        editor.putString("iIron", Integer.toString(Inventory.getResourceAmount(getResources().getString(R.string.Iron))));
+        editor.putString("iSilver", Integer.toString(Inventory.getResourceAmount(getResources().getString(R.string.Silver))));
+        editor.putString("iTungsten", Integer.toString(Inventory.getResourceAmount(getResources().getString(R.string.Tungsten))));
+        editor.putString("iOsmium", Integer.toString(Inventory.getResourceAmount(getResources().getString(R.string.Osmium))));
+        editor.putString("iPlatinum", Integer.toString(Inventory.getResourceAmount(getResources().getString(R.string.Platinum))));
+        editor.putString("iGold", Integer.toString(Inventory.getResourceAmount(getResources().getString(R.string.Gold))));
+        editor.putString("iDiamond", Integer.toString(Inventory.getResourceAmount(getResources().getString(R.string.Diamond))));
+        editor.putString("iUranium", Integer.toString(Inventory.getResourceAmount(getResources().getString(R.string.Uranium))));
+
+        editor.putString("mpCopper", Double.toString(Mines.getProduction(getResources().getString(R.string.Copper))));
+        editor.putString("mpAluminum", Double.toString(Mines.getProduction(getResources().getString(R.string.Aluminum))));
+        editor.putString("mpIron", Double.toString(Mines.getProduction(getResources().getString(R.string.Iron))));
+        editor.putString("mpSilver", Double.toString(Mines.getProduction(getResources().getString(R.string.Silver))));
+        editor.putString("mpTungsten", Double.toString(Mines.getProduction(getResources().getString(R.string.Tungsten))));
+        editor.putString("mpOsmium", Double.toString(Mines.getProduction(getResources().getString(R.string.Osmium))));
+        editor.putString("mpPlatinum", Double.toString(Mines.getProduction(getResources().getString(R.string.Platinum))));
+        editor.putString("mpGold", Double.toString(Mines.getProduction(getResources().getString(R.string.Gold))));
+        editor.putString("mpDiamond", Double.toString(Mines.getProduction(getResources().getString(R.string.Diamond))));
+        editor.putString("mpUranium", Double.toString(Mines.getProduction(getResources().getString(R.string.Uranium))));
+
+        editor.putString("mcCopper", Double.toString(Mines.getCost(getResources().getString(R.string.Copper))));
+        editor.putString("mcAluminum", Double.toString(Mines.getCost(getResources().getString(R.string.Aluminum))));
+        editor.putString("mcIron", Double.toString(Mines.getCost(getResources().getString(R.string.Iron))));
+        editor.putString("mcSilver", Double.toString(Mines.getCost(getResources().getString(R.string.Silver))));
+        editor.putString("mcTungsten", Double.toString(Mines.getCost(getResources().getString(R.string.Tungsten))));
+        editor.putString("mcOsmium", Double.toString(Mines.getCost(getResources().getString(R.string.Osmium))));
+        editor.putString("mcPlatinum", Double.toString(Mines.getCost(getResources().getString(R.string.Platinum))));
+        editor.putString("mcGold", Double.toString(Mines.getCost(getResources().getString(R.string.Gold))));
+        editor.putString("mcDiamond", Double.toString(Mines.getCost(getResources().getString(R.string.Diamond))));
+        editor.putString("mcUranium", Double.toString(Mines.getCost(getResources().getString(R.string.Uranium))));
+
+        editor.putString("plCopper", Integer.toString(Mines.getProductionLevel(getResources().getString(R.string.Copper))));
+        editor.putString("plAluminum", Integer.toString(Mines.getProductionLevel(getResources().getString(R.string.Aluminum))));
+        editor.putString("plIron", Integer.toString(Mines.getProductionLevel(getResources().getString(R.string.Iron))));
+        editor.putString("plSilver", Integer.toString(Mines.getProductionLevel(getResources().getString(R.string.Silver))));
+        editor.putString("plTungsten", Integer.toString(Mines.getProductionLevel(getResources().getString(R.string.Tungsten))));
+        editor.putString("plOsmium", Integer.toString(Mines.getProductionLevel(getResources().getString(R.string.Osmium))));
+        editor.putString("plPlatinum", Integer.toString(Mines.getProductionLevel(getResources().getString(R.string.Platinum))));
+        editor.putString("plGold", Integer.toString(Mines.getProductionLevel(getResources().getString(R.string.Gold))));
+        editor.putString("plDiamond", Integer.toString(Mines.getProductionLevel(getResources().getString(R.string.Diamond))));
+        editor.putString("plUranium", Integer.toString(Mines.getProductionLevel(getResources().getString(R.string.Uranium))));
+
+        editor.apply();
     }
 }

@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +27,9 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
 
     CustomAdapter adapter;
     private static List<Data> rowItems;
-    private static int position;
+    private static int position, previousPosition;
+    private static String colors[] = {"#68E52A"};
+    private static String[] rowColors = {"#C87533", "#ADB2BD", "#E6E7E8", "#C0C0C0", "#787C85", "#9090A3", "#E5E4E2", "#FFD700", "#26DCF5", "#5B8a5F"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,16 +53,51 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-        Button button = (Button) view.findViewById(R.id.deleteButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setPosition(position);
-                Intent intent = new Intent(getActivity(),EconomicsPurchase.class);
-                startActivity(intent);
-            }
-        });
+    public void onItemClick(AdapterView<?> parent, final View view, final int position, long id) {
+
+        if(!(previousPosition == position)){
+            parent.getChildAt(previousPosition).setBackgroundColor(Color.parseColor(rowColors[previousPosition]));
+        }
+        parent.getChildAt(position).setBackgroundColor(Color.parseColor(colors[0]));
+        setPreviousPosition(position);
+
+        if(contextTitle == R.string.mineTab){
+            Button button = (Button)view.findViewById(R.id.deleteButton);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Data row_pos = rowItems.get(position);
+                    if(!(Mines.getCost(row_pos.getName()) > Inventory.getMoney())){
+                        Inventory.subtractMoney(Mines.getCost(row_pos.getName()));
+                        Toast.makeText(getActivity(), R.string.buy_successful, Toast.LENGTH_SHORT).show();
+                        if(Mines.getProductionLevel(row_pos.getName()) < 1){
+                            Mines.setProduction(row_pos.getName(), Prices.getMarketPrices(row_pos.getName()) * 25);
+                            Mines.increaseCost(row_pos.getName());
+                            TextView textView = (TextView)view.findViewById(R.id.list_item_description);
+                            textView.setText(Double.toString(Mines.getProduction(row_pos.getName())));
+                        }else{
+                            Mines.increaseProduction(row_pos.getName());
+                            Mines.increaseCost(row_pos.getName());
+                            TextView textView = (TextView)view.findViewById(R.id.list_item_description);
+                            textView.setText(Double.toString(Mines.getProduction(row_pos.getName())));
+                        }
+                    }else{
+                        Toast.makeText(getActivity(), R.string.buy_unsuccessful, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }else {
+
+            Button button = (Button) view.findViewById(R.id.deleteButton);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    setPosition(position);
+                    Intent intent = new Intent(getActivity(), EconomicsPurchase.class);
+                    startActivity(intent);
+                }
+            });
+        }
     }
 
     public static void refreshedData(List<Data> data){
@@ -76,6 +115,14 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
 
     public static List<Data> getListData(){
         return rowItems;
+    }
+
+    private static void setPreviousPosition(int position){
+        previousPosition = position;
+    }
+
+    private static int getPreviousPosition(){
+        return previousPosition;
     }
 
     public static void setPosition(int i){

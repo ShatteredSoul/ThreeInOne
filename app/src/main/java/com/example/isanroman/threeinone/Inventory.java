@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Inventory extends AppCompatActivity {
 
-    private static double userMoney = 500;
+    private static double userMoney = 500000;
     private static Map<String, Integer> userResources = new HashMap<>();
 
     public static void setMoney(double m){
