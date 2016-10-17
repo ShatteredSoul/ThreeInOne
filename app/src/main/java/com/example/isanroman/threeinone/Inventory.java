@@ -2,6 +2,7 @@ package com.example.isanroman.threeinone;
 
 import android.support.v7.app.AppCompatActivity;
 
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public class Inventory extends AppCompatActivity {
     }
 
     public static double getMoney(){
-        return userMoney;
+        return numberFormat();
     }
 
     public static void subtractMoney(double m){
@@ -49,5 +50,25 @@ public class Inventory extends AppCompatActivity {
             return 0;
         else
             return userResources.get(name);
+    }
+
+    private static double numberFormat(){
+        NumberFormat nf = NumberFormat.getNumberInstance();
+        nf.setMinimumFractionDigits(1);
+        nf.setMaximumFractionDigits(2);
+
+        double number = userMoney;
+        String temp = nf.format(number);
+        String finalString = "";
+
+        for(int i = 0; i < temp.length(); i++){
+            if(temp.charAt(i) == ','){
+
+            }else{
+                finalString += temp.charAt(i);
+            }
+        }
+
+        return Double.parseDouble(finalString);
     }
 }

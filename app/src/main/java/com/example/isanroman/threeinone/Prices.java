@@ -2,9 +2,12 @@ package com.example.isanroman.threeinone;
 
 import android.support.v7.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * Created by Gamer-Isaiah on 10/14/2016.
@@ -13,19 +16,6 @@ import java.util.Map;
 public class Prices extends AppCompatActivity {
 
     private static Map<String, Double> marketPrices = new HashMap<>();
-
-    public Prices(){
-        marketPrices.put(getResources().getString(R.string.Copper), 1.75);
-        marketPrices.put(getResources().getString(R.string.Aluminum), 0.50);
-        marketPrices.put(getResources().getString(R.string.Diamond), 66867353300.80);
-        marketPrices.put(getResources().getString(R.string.Gold), 1259.23);
-        marketPrices.put(getResources().getString(R.string.Uranium), 31.10);
-        marketPrices.put(getResources().getString(R.string.Tungsten), 19.85);
-        marketPrices.put(getResources().getString(R.string.Silver), 236.76);
-        marketPrices.put(getResources().getString(R.string.Platinum), 1480.00);
-        marketPrices.put(getResources().getString(R.string.Iron), 0.24);
-        marketPrices.put(getResources().getString(R.string.Osmium), 5909.00);
-    }
 
     public static void setMarketPrices(String name, double price){
         marketPrices.put(name, price);
@@ -44,6 +34,26 @@ public class Prices extends AppCompatActivity {
     }
 
     public static double getMarketPrices(String name){
-        return marketPrices.get(name);
+        return numberFormat(name);
+    }
+
+    private static double numberFormat(String name){
+        NumberFormat nf = NumberFormat.getNumberInstance();
+        nf.setMinimumFractionDigits(1);
+        nf.setMaximumFractionDigits(2);
+
+        double number = marketPrices.get(name);
+        String temp = nf.format(number);
+        String finalString = "";
+
+        for(int i = 0; i < temp.length(); i++){
+            if(temp.charAt(i) == ','){
+
+            }else{
+                finalString += temp.charAt(i);
+            }
+        }
+
+        return Double.parseDouble(finalString);
     }
 }

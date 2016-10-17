@@ -2,6 +2,7 @@ package com.example.isanroman.threeinone;
 
 import android.support.v7.app.AppCompatActivity;
 
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +35,7 @@ public class Mines extends AppCompatActivity {
     }
 
     public static double getProduction(String name){
-        return production.get(name);
+        return numberFormat(name, "production");
     }
 
     public static void setCost(String name, double cost){
@@ -48,6 +49,33 @@ public class Mines extends AppCompatActivity {
     }
 
     public static double getCost(String name){
-       return upgradeCost.get(name);
+       return numberFormat(name, "upgradeCost");
+    }
+
+    private static double numberFormat(String name, String type){
+        NumberFormat nf = NumberFormat.getNumberInstance();
+        nf.setMinimumFractionDigits(1);
+        nf.setMaximumFractionDigits(2);
+
+        double number;
+
+        if(type.equals("production"))
+            number = production.get(name);
+        else
+            number = upgradeCost.get(name);
+
+
+        String temp = nf.format(number);
+        String finalString = "";
+
+        for(int i = 0; i < temp.length(); i++){
+            if(temp.charAt(i) == ','){
+
+            }else{
+                finalString += temp.charAt(i);
+            }
+        }
+
+        return Double.parseDouble(finalString);
     }
 }

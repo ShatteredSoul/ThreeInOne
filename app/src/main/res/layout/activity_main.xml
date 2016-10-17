@@ -25,7 +25,9 @@
         android:layout_below="@id/universeButton"
         android:layout_marginLeft="4dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:src="@drawable/economics_image"
+        android:background="@drawable/roundedbutton"/>
 
     <TextView
         android:id="@+id/playerName"
@@ -57,7 +59,9 @@
         android:layout_below="@id/totalMoney"
         android:layout_marginTop="4dp"
         android:layout_marginRight="4dp"
-        android:layout_marginEnd="4dp" />
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/settings_image"
+        android:background="@drawable/roundedbutton"/>
 
     <LinearLayout
         android:layout_width="match_parent"

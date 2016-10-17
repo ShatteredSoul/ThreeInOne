@@ -109,8 +109,6 @@ public class EconomicsPurchase extends AppCompatActivity{
                     Inventory.subtractMoney(buyAmount);
                     Inventory.addResource(row_pos.getName(), buyQuantity);
                     Prices.setMarketPricesIncrease(row_pos.getName(), buyQuantity);
-                    TextView textView = (TextView)v.findViewById(R.id.list_item_description);// this is a test to see if automatic changes happen to the list fragment
-                    textView.setText(Double.toString(Prices.getMarketPrices(row_pos.getName())));
                     updateUI();
                 }else Toast.makeText(EconomicsPurchase.this, R.string.buy_unsuccessful, Toast.LENGTH_SHORT).show();
             }
@@ -124,8 +122,6 @@ public class EconomicsPurchase extends AppCompatActivity{
                     Inventory.addMoney(sellAmount);
                     Inventory.removeResource(row_pos.getName(), sellQuantity);
                     Prices.setMarketPricesDecrease(row_pos.getName(), sellQuantity);
-                    TextView textView = (TextView)v.findViewById(R.id.list_item_description); //this is a test to see if automatic changes happen to the list fragment
-                    textView.setText(Double.toString(Prices.getMarketPrices(row_pos.getName())));
                     updateUI();
                 }else Toast.makeText(EconomicsPurchase.this, R.string.sell_unsuccessful, Toast.LENGTH_SHORT).show();
             }
