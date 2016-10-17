@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Inventory extends AppCompatActivity {
 
-    private static double userMoney = 500000;
+    private static double userMoney = 50000000000000.0;
     private static Map<String, Integer> userResources = new HashMap<>();
 
     public static void setMoney(double m){

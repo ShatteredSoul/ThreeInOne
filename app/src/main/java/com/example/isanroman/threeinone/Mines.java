@@ -24,13 +24,18 @@ public class Mines extends AppCompatActivity {
         return productionLevel.get(name);
     }
 
+    public static void increaseProductionLevel(String name){
+        int temp = productionLevel.get(name);
+        productionLevel.put(name, temp + 1);
+    }
+
     public static void setProduction(String name, double prod){
         production.put(name, prod);
     }
 
     public static void increaseProduction(String name){
         double temp = production.get(name);
-        temp = temp + (temp * 0.05);
+        temp = temp + (temp * 0.25);
         production.put(name, temp);
     }
 
@@ -43,9 +48,9 @@ public class Mines extends AppCompatActivity {
     }
 
     public static void increaseCost(String name){
-        double temp = production.get(name);
-        temp = temp + (temp * 0.05);
-        production.put(name, temp);
+        double temp = upgradeCost.get(name);
+        temp = temp + (temp * 0.25);
+        upgradeCost.put(name, temp);
     }
 
     public static double getCost(String name){
@@ -64,18 +69,26 @@ public class Mines extends AppCompatActivity {
         else
             number = upgradeCost.get(name);
 
+        nf.format(number);
+        String a = Double.toString(number);
 
-        String temp = nf.format(number);
-        String finalString = "";
+        boolean mark = false;
+        String b = "";
+        int count = 0;
 
-        for(int i = 0; i < temp.length(); i++){
-            if(temp.charAt(i) == ','){
-
+        for(int i = 0; i < a.length(); i++){
+            if(!mark){
+                b += a.charAt(i);
+                if(a.charAt(i) == '.')
+                    mark = true;
             }else{
-                finalString += temp.charAt(i);
+                if(count < 2) {
+                    b += a.charAt(i);
+                    count++;
+                }
             }
         }
 
-        return Double.parseDouble(finalString);
+        return Double.parseDouble(b);
     }
 }

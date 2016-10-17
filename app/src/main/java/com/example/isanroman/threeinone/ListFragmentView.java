@@ -53,7 +53,7 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, final View view, final int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
         if(!(previousPosition == position)){
             parent.getChildAt(previousPosition).setBackgroundColor(Color.parseColor(rowColors[previousPosition]));
@@ -62,24 +62,31 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
         setPreviousPosition(position);
 
         if(contextTitle == R.string.mineTab){
-            Button button = (Button)view.findViewById(R.id.deleteButton);
+            Button button = (Button)getListView().getChildAt(getPreviousPosition()).findViewById(R.id.deleteButton);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Data row_pos = rowItems.get(position);
+                    Data row_pos = rowItems.get(getPreviousPosition());
                     if(!(Mines.getCost(row_pos.getName()) > Inventory.getMoney())){
                         Inventory.subtractMoney(Mines.getCost(row_pos.getName()));
                         Toast.makeText(getActivity(), R.string.buy_successful, Toast.LENGTH_SHORT).show();
                         if(Mines.getProductionLevel(row_pos.getName()) < 1){
                             Mines.setProduction(row_pos.getName(), Prices.getMarketPrices(row_pos.getName()) * 25);
                             Mines.increaseCost(row_pos.getName());
-                            TextView textView = (TextView)view.findViewById(R.id.list_item_description);
+                            Mines.increaseProductionLevel(row_pos.getName());
+                            TextView textView = (TextView)getListView().getChildAt(getPreviousPosition()).findViewById(R.id.list_item_description);
                             textView.setText(Double.toString(Mines.getProduction(row_pos.getName())));
-                        }else{
+                            TextView textCost = (TextView)getListView().getChildAt(getPreviousPosition()).findViewById(R.id.deleteButton);
+                            textCost.setText(Double.toString(Mines.getCost(row_pos.getName())));
+
+                        }else if(Mines.getProductionLevel(row_pos.getName()) >= 1){
                             Mines.increaseProduction(row_pos.getName());
                             Mines.increaseCost(row_pos.getName());
-                            TextView textView = (TextView)view.findViewById(R.id.list_item_description);
+                            Mines.increaseProductionLevel(row_pos.getName());
+                            TextView textView = (TextView)getListView().getChildAt(getPreviousPosition()).findViewById(R.id.list_item_description);
                             textView.setText(Double.toString(Mines.getProduction(row_pos.getName())));
+                            TextView textCost = (TextView)getListView().getChildAt(getPreviousPosition()).findViewById(R.id.deleteButton);
+                            textCost.setText(Double.toString(Mines.getCost(row_pos.getName())));
                         }
                     }else{
                         Toast.makeText(getActivity(), R.string.buy_unsuccessful, Toast.LENGTH_SHORT).show();
@@ -92,7 +99,7 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    setPosition(position);
+                    setPosition(getPreviousPosition());
                     Intent intent = new Intent(getActivity(), EconomicsPurchase.class);
                     startActivity(intent);
                 }

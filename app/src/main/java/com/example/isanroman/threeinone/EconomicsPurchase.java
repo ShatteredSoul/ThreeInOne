@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class EconomicsPurchase extends AppCompatActivity{
     private static Data row_pos;
     private static double buyAmount, sellAmount;
     private static int buyQuantity, sellQuantity;
+    private static String multiplier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class EconomicsPurchase extends AppCompatActivity{
         Button sellButton = (Button)findViewById(R.id.sellButton);
         Button backButton = (Button)findViewById(R.id.epBackButton);
 
+        multiplier = Double.toString(Prices.getMarketPrices(row_pos.getName()));
+
         final EditText editText = (EditText)findViewById(R.id.resourceSetQuantity);
         editText.addTextChangedListener(new TextWatcher() {
 
@@ -61,14 +65,8 @@ public class EconomicsPurchase extends AppCompatActivity{
             @Override
             public void afterTextChanged(Editable s) {
                 try {
-                    String text = editText.getText().toString();
-                    String multiplier = row_pos.getId();
-                    double times = Double.parseDouble(multiplier);
-                    int value = Integer.parseInt(text);
-                    buyQuantity = value;
-                    buyAmount = value * times;
-                    text = Double.toString(value * times);
-                    buyTotal.setText(text);
+                    buyQuantity = Integer.parseInt(editText.getText().toString());
+                    buyTotal.setText(numberFormat(buyQuantity, multiplier, "buy"));
                 }catch(NumberFormatException e){e.printStackTrace();}
             }
         });
@@ -89,14 +87,8 @@ public class EconomicsPurchase extends AppCompatActivity{
             @Override
             public void afterTextChanged(Editable s) {
                 try {
-                    String text = editText1.getText().toString();
-                    String multiplier = row_pos.getId();
-                    double times = Double.parseDouble(multiplier);
-                    int value = Integer.parseInt(text);
-                    sellQuantity = value;
-                    sellAmount = (value * times) - ((value * times) * .2);
-                    text = Double.toString((value * times) - ((value * times) * .2));
-                    sellTotal.setText(text);
+                    sellQuantity = Integer.parseInt(editText1.getText().toString());
+                    sellTotal.setText(numberFormat(sellQuantity, multiplier, "sell"));
                 }catch(NumberFormatException e){e.printStackTrace();}
             }
         });
@@ -160,12 +152,58 @@ public class EconomicsPurchase extends AppCompatActivity{
 
         TextView textPrice = (TextView)findViewById(R.id.resourcePrice);
         textPrice.setText(Double.toString(Prices.getMarketPrices(row_pos.getName())));
+
+        multiplier = Double.toString(Prices.getMarketPrices(row_pos.getName()));
+        buyAmount = Double.parseDouble(numberFormat(buyQuantity, multiplier, "buy"));
+        sellAmount = Double.parseDouble(numberFormat(sellQuantity, multiplier, "sell"));
+
+        TextView textBuyTotal = (TextView)findViewById(R.id.resourceTotalPrice);
+        textBuyTotal.setText(Double.toString(buyAmount));
+
+        TextView textSellTotal = (TextView)findViewById(R.id.resourceTotalSellPrice);
+        textSellTotal.setText(Double.toString(sellAmount));
     }
 
     @Override
     protected void onPause(){
         super.onPause();
         saveData();
+    }
+
+    private String numberFormat(double value, String multiplier, String mode){
+        NumberFormat nf = NumberFormat.getNumberInstance();
+        nf.setMinimumFractionDigits(1);
+        nf.setMaximumFractionDigits(2);
+
+        double temp;
+
+        if(mode.equals("buy"))
+            temp = value * Double.parseDouble(multiplier);
+        else
+            temp = (value * Double.parseDouble(multiplier)) - ((value * Double.parseDouble(multiplier)) * 0.2);
+
+            nf.format(temp);
+
+            String a = Double.toString(temp);
+
+            boolean mark = false;
+            String b = "";
+            int count = 0;
+
+            for(int i = 0; i < a.length(); i++){
+                if(!mark){
+                    b += a.charAt(i);
+                    if(a.charAt(i) == '.')
+                        mark = true;
+                }else{
+                    if(count < 2) {
+                        b += a.charAt(i);
+                        count++;
+                    }
+                }
+            }
+
+            return b;
     }
 
     public void saveData() {

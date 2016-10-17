@@ -9,6 +9,7 @@
     <string name="playerTab">Player Upgrades</string>
     <string name="mineTab">Mine Upgrades</string>
     <string name="economicsTab">Economics</string>
+    <string name="settings">Settings</string>
     <string name="name">Name</string>
     <string name="price">Buy Price</string>
     <string name="buy_sell">Buy/Sell</string>
