@@ -3,6 +3,7 @@ package com.example.isanroman.threeinone;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 /**
@@ -24,6 +25,9 @@ public class UniverseMap extends AppCompatActivity {
 
         ImageButton galaxyThreeButton = (ImageButton)findViewById(R.id.galaxyThree);
         galaxyThreeButton.setOnClickListener(onClickListener);
+
+        Button backButton = (Button)findViewById(R.id.umBackButton);
+        backButton.setOnClickListener(onClickListener);
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -35,6 +39,9 @@ public class UniverseMap extends AppCompatActivity {
                 case R.id.galaxyTwo:
                     break;
                 case R.id.galaxyThree:
+                    break;
+                case R.id.umBackButton:
+                    onBackPressed();
                     break;
             }
         }

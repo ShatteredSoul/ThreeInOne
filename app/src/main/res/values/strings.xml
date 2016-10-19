@@ -31,6 +31,27 @@
     <string name="buy_unsuccessful">Buy Unsuccessful</string>
     <string name="sell_successful">Sell Successful</string>
     <string name="sell_unsuccessful">Sell Unsuccessful</string>
+    <string name="galaxyOneName">Name</string>
+    <string name="galaxyTwoName">Name</string>
+    <string name="galaxyThreeName">Name</string>
+
+    <string-array name="galaxyOneSolarSystems">
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <string-array name="galaxyTwoSolarSystems">
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <string-array name="galaxyThreeSolarSystems">
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
 
     <string-array name="shipItems">
 
