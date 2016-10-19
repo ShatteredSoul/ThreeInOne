@@ -17,8 +17,6 @@ import java.util.List;
 
 public class EconomicsActivity extends FragmentActivity{
 
-    SaveData saveData = new SaveData(EconomicsActivity.this);
-
     @Override
     protected void onCreate(Bundle savedInstanceBundle){
         super.onCreate(savedInstanceBundle);
@@ -39,7 +37,6 @@ public class EconomicsActivity extends FragmentActivity{
     @Override
     protected void onPause(){
         super.onPause();
-        saveData.saveData();
     }
 
     @Override

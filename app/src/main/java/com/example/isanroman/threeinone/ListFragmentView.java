@@ -74,6 +74,9 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
                             Mines.setProduction(row_pos.getName(), Prices.getMarketPrices(row_pos.getName()) * 25);
                             Mines.increaseCost(row_pos.getName());
                             Mines.increaseProductionLevel(row_pos.getName());
+                            SaveData.productionChange = true;
+                            SaveData.costChange = true;
+                            SaveData.productionLevelChange = true;
                             TextView textView = (TextView)getListView().getChildAt(getPreviousPosition()).findViewById(R.id.list_item_description);
                             textView.setText(Double.toString(Mines.getProduction(row_pos.getName())));
                             TextView textCost = (TextView)getListView().getChildAt(getPreviousPosition()).findViewById(R.id.deleteButton);
@@ -83,6 +86,9 @@ public class ListFragmentView extends ListFragment implements AdapterView.OnItem
                             Mines.increaseProduction(row_pos.getName());
                             Mines.increaseCost(row_pos.getName());
                             Mines.increaseProductionLevel(row_pos.getName());
+                            SaveData.productionChange = true;
+                            SaveData.costChange = true;
+                            SaveData.productionLevelChange = true;
                             TextView textView = (TextView)getListView().getChildAt(getPreviousPosition()).findViewById(R.id.list_item_description);
                             textView.setText(Double.toString(Mines.getProduction(row_pos.getName())));
                             TextView textCost = (TextView)getListView().getChildAt(getPreviousPosition()).findViewById(R.id.deleteButton);

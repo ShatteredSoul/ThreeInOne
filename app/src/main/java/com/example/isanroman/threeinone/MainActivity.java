@@ -1,6 +1,7 @@
 package com.example.isanroman.threeinone;
 
 import android.content.Intent;
+import android.os.Process;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -96,7 +97,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause(){
         super.onPause();
-        saveData.saveData();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                saveData.saveData();
+            }
+        }).start();
     }
 
     private void updateUI(){

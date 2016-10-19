@@ -12,6 +12,8 @@ import android.preference.PreferenceManager;
 public class SaveData{
 
     private Context context;
+    public static boolean marketPricesChange = false, resourceAmountChange = false, productionChange = false,
+            costChange = false, productionLevelChange = false;
 
     public SaveData(Context con){
         context = con;
@@ -23,60 +25,75 @@ public class SaveData{
 
         editor.putString("userMoney", Double.toString(Inventory.getMoney()));
 
-        editor.putString("pCopper", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Copper))));
-        editor.putString("pAluminum", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Aluminum))));
-        editor.putString("pIron", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Iron))));
-        editor.putString("pSilver", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Silver))));
-        editor.putString("pTungsten", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Tungsten))));
-        editor.putString("pOsmium", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Osmium))));
-        editor.putString("pPlatinum", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Platinum))));
-        editor.putString("pGold", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Gold))));
-        editor.putString("pDiamond", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Diamond))));
-        editor.putString("pUranium", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Uranium))));
+        if(marketPricesChange) {
+            editor.putString("pCopper", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Copper))));
+            editor.putString("pAluminum", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Aluminum))));
+            editor.putString("pIron", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Iron))));
+            editor.putString("pSilver", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Silver))));
+            editor.putString("pTungsten", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Tungsten))));
+            editor.putString("pOsmium", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Osmium))));
+            editor.putString("pPlatinum", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Platinum))));
+            editor.putString("pGold", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Gold))));
+            editor.putString("pDiamond", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Diamond))));
+            editor.putString("pUranium", Double.toString(Prices.getMarketPrices(context.getResources().getString(R.string.Uranium))));
+            marketPricesChange = false;
+        }
 
-        editor.putString("iCopper", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Copper))));
-        editor.putString("iAluminum", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Aluminum))));
-        editor.putString("iIron", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Iron))));
-        editor.putString("iSilver", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Silver))));
-        editor.putString("iTungsten", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Tungsten))));
-        editor.putString("iOsmium", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Osmium))));
-        editor.putString("iPlatinum", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Platinum))));
-        editor.putString("iGold", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Gold))));
-        editor.putString("iDiamond", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Diamond))));
-        editor.putString("iUranium", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Uranium))));
+        if(resourceAmountChange) {
+            editor.putString("iCopper", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Copper))));
+            editor.putString("iAluminum", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Aluminum))));
+            editor.putString("iIron", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Iron))));
+            editor.putString("iSilver", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Silver))));
+            editor.putString("iTungsten", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Tungsten))));
+            editor.putString("iOsmium", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Osmium))));
+            editor.putString("iPlatinum", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Platinum))));
+            editor.putString("iGold", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Gold))));
+            editor.putString("iDiamond", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Diamond))));
+            editor.putString("iUranium", Integer.toString(Inventory.getResourceAmount(context.getResources().getString(R.string.Uranium))));
+            resourceAmountChange = false;
+        }
 
-        editor.putString("mpCopper", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Copper))));
-        editor.putString("mpAluminum", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Aluminum))));
-        editor.putString("mpIron", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Iron))));
-        editor.putString("mpSilver", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Silver))));
-        editor.putString("mpTungsten", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Tungsten))));
-        editor.putString("mpOsmium", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Osmium))));
-        editor.putString("mpPlatinum", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Platinum))));
-        editor.putString("mpGold", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Gold))));
-        editor.putString("mpDiamond", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Diamond))));
-        editor.putString("mpUranium", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Uranium))));
+        if(productionChange) {
+            editor.putString("mpCopper", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Copper))));
+            editor.putString("mpAluminum", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Aluminum))));
+            editor.putString("mpIron", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Iron))));
+            editor.putString("mpSilver", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Silver))));
+            editor.putString("mpTungsten", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Tungsten))));
+            editor.putString("mpOsmium", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Osmium))));
+            editor.putString("mpPlatinum", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Platinum))));
+            editor.putString("mpGold", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Gold))));
+            editor.putString("mpDiamond", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Diamond))));
+            editor.putString("mpUranium", Double.toString(Mines.getProduction(context.getResources().getString(R.string.Uranium))));
+            productionChange = false;
+        }
 
-        editor.putString("mcCopper", Double.toString(Mines.getCost(context.getResources().getString(R.string.Copper))));
-        editor.putString("mcAluminum", Double.toString(Mines.getCost(context.getResources().getString(R.string.Aluminum))));
-        editor.putString("mcIron", Double.toString(Mines.getCost(context.getResources().getString(R.string.Iron))));
-        editor.putString("mcSilver", Double.toString(Mines.getCost(context.getResources().getString(R.string.Silver))));
-        editor.putString("mcTungsten", Double.toString(Mines.getCost(context.getResources().getString(R.string.Tungsten))));
-        editor.putString("mcOsmium", Double.toString(Mines.getCost(context.getResources().getString(R.string.Osmium))));
-        editor.putString("mcPlatinum", Double.toString(Mines.getCost(context.getResources().getString(R.string.Platinum))));
-        editor.putString("mcGold", Double.toString(Mines.getCost(context.getResources().getString(R.string.Gold))));
-        editor.putString("mcDiamond", Double.toString(Mines.getCost(context.getResources().getString(R.string.Diamond))));
-        editor.putString("mcUranium", Double.toString(Mines.getCost(context.getResources().getString(R.string.Uranium))));
+        if(costChange) {
+            editor.putString("mcCopper", Double.toString(Mines.getCost(context.getResources().getString(R.string.Copper))));
+            editor.putString("mcAluminum", Double.toString(Mines.getCost(context.getResources().getString(R.string.Aluminum))));
+            editor.putString("mcIron", Double.toString(Mines.getCost(context.getResources().getString(R.string.Iron))));
+            editor.putString("mcSilver", Double.toString(Mines.getCost(context.getResources().getString(R.string.Silver))));
+            editor.putString("mcTungsten", Double.toString(Mines.getCost(context.getResources().getString(R.string.Tungsten))));
+            editor.putString("mcOsmium", Double.toString(Mines.getCost(context.getResources().getString(R.string.Osmium))));
+            editor.putString("mcPlatinum", Double.toString(Mines.getCost(context.getResources().getString(R.string.Platinum))));
+            editor.putString("mcGold", Double.toString(Mines.getCost(context.getResources().getString(R.string.Gold))));
+            editor.putString("mcDiamond", Double.toString(Mines.getCost(context.getResources().getString(R.string.Diamond))));
+            editor.putString("mcUranium", Double.toString(Mines.getCost(context.getResources().getString(R.string.Uranium))));
+            costChange = false;
+        }
 
-        editor.putString("plCopper", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Copper))));
-        editor.putString("plAluminum", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Aluminum))));
-        editor.putString("plIron", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Iron))));
-        editor.putString("plSilver", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Silver))));
-        editor.putString("plTungsten", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Tungsten))));
-        editor.putString("plOsmium", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Osmium))));
-        editor.putString("plPlatinum", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Platinum))));
-        editor.putString("plGold", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Gold))));
-        editor.putString("plDiamond", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Diamond))));
-        editor.putString("plUranium", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Uranium))));
+        if(productionLevelChange) {
+            editor.putString("plCopper", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Copper))));
+            editor.putString("plAluminum", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Aluminum))));
+            editor.putString("plIron", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Iron))));
+            editor.putString("plSilver", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Silver))));
+            editor.putString("plTungsten", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Tungsten))));
+            editor.putString("plOsmium", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Osmium))));
+            editor.putString("plPlatinum", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Platinum))));
+            editor.putString("plGold", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Gold))));
+            editor.putString("plDiamond", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Diamond))));
+            editor.putString("plUranium", Integer.toString(Mines.getProductionLevel(context.getResources().getString(R.string.Uranium))));
+            productionLevelChange = false;
+        }
 
         editor.apply();
     }

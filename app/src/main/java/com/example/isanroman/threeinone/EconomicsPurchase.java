@@ -102,6 +102,8 @@ public class EconomicsPurchase extends AppCompatActivity{
                     Inventory.subtractMoney(buyAmount);
                     Inventory.addResource(row_pos.getName(), buyQuantity);
                     Prices.setMarketPricesIncrease(row_pos.getName(), buyQuantity);
+                    SaveData.marketPricesChange = true;
+                    SaveData.resourceAmountChange = true;
                     updateUI();
                 }else Toast.makeText(EconomicsPurchase.this, R.string.buy_unsuccessful, Toast.LENGTH_SHORT).show();
             }
@@ -115,6 +117,8 @@ public class EconomicsPurchase extends AppCompatActivity{
                     Inventory.addMoney(sellAmount);
                     Inventory.removeResource(row_pos.getName(), sellQuantity);
                     Prices.setMarketPricesDecrease(row_pos.getName(), sellQuantity);
+                    SaveData.marketPricesChange = true;
+                    SaveData.resourceAmountChange = true;
                     updateUI();
                 }else Toast.makeText(EconomicsPurchase.this, R.string.sell_unsuccessful, Toast.LENGTH_SHORT).show();
             }
@@ -168,7 +172,12 @@ public class EconomicsPurchase extends AppCompatActivity{
     @Override
     protected void onPause(){
         super.onPause();
-        saveData.saveData();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                saveData.saveData();
+            }
+        }).start();
     }
 
     private String numberFormat(double value, String multiplier, String mode){
