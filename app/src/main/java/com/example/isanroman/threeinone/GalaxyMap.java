@@ -1,5 +1,6 @@
 package com.example.isanroman.threeinone;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -53,14 +54,30 @@ public class GalaxyMap extends AppCompatActivity {
         public void onClick(View v) {
             switch(v.getId()){
                 case R.id.gmBackButton:
+                    onBackPressed();
                     break;
                 case R.id.solarSystemOne:
+                    Intent i = new Intent(GalaxyMap.this, SolarMap.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(i);
                     break;
                 case R.id.solarSystemTwo:
+                    Intent ii = new Intent(GalaxyMap.this, SolarMap.class);
+                    ii.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(ii);
                     break;
                 case R.id.solarSystemThree:
+                    Intent iii = new Intent(GalaxyMap.this, SolarMap.class);
+                    iii.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(iii);
                     break;
             }
         }
     };
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        overridePendingTransition(0,0);
+    }
 }

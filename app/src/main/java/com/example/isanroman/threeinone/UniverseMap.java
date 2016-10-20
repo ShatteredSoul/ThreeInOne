@@ -39,16 +39,19 @@ public class UniverseMap extends AppCompatActivity {
                 case R.id.galaxyOne:
                     setGalaxySelected(R.id.galaxyOne);
                     Intent i = new Intent(UniverseMap.this, GalaxyMap.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(i);
                     break;
                 case R.id.galaxyTwo:
                     setGalaxySelected(R.id.galaxyTwo);
                     Intent ii = new Intent(UniverseMap.this, GalaxyMap.class);
+                    ii.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(ii);
                     break;
                 case R.id.galaxyThree:
                     setGalaxySelected(R.id.galaxyThree);
                     Intent iii = new Intent(UniverseMap.this, GalaxyMap.class);
+                    iii.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(iii);
                     break;
                 case R.id.umBackButton:
