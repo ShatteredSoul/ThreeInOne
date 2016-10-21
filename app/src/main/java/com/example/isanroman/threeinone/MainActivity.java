@@ -1,10 +1,14 @@
 package com.example.isanroman.threeinone;
 
+import android.content.Context;
 import android.content.Intent;
-import android.os.Process;
+import android.media.AudioManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -14,13 +18,16 @@ public class MainActivity extends AppCompatActivity {
 
     SaveData saveData = new SaveData(MainActivity.this);
 
+    private static boolean volume = false;
+    private View vv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LocaleHelper.onCreate(this, "en");
         setContentView(R.layout.activity_main);
 
         setResources();
-
 
         try {
             saveData.getData();
@@ -83,10 +90,42 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(ui);
                     break;
                 case R.id.settingsButton:
+                    registerForContextMenu(v);
+                    openContextMenu(v);
+                    vv = v;
+                    System.out.println("Clicked");
                     break;
             }
         }
     };
+
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        if(v.getId() == R.id.settingsButton)
+            getMenuInflater().inflate(R.menu.settings_menu, menu);
+        else
+            getMenuInflater().inflate(R.menu.language_menu, menu);
+    }
+
+    public boolean onContextItemSelected(MenuItem item){
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+        switch (item.getItemId()){
+            case R.id.inGameVolume:
+                AudioManager volumeControl = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+                if(volume)
+                    volumeControl.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
+                else
+                    volumeControl.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 100);
+                break;
+            case R.id.changeGameLanguage:
+                closeContextMenu();
+                registerForContextMenu(vv);
+                openContextMenu(vv);
+                break;
+        }
+        return true;
+    }
 
     @Override
     protected void onResume(){

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/inGameVolume"
+        android:title="@string/inGameVolume"/>
+    <item
+        android:id="@+id/changeGameLanguage"
+        android:title="@string/changeLanguage"/>
+</menu>

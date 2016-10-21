@@ -34,6 +34,8 @@
     <string name="galaxyOneName">Name</string>
     <string name="galaxyTwoName">Name</string>
     <string name="galaxyThreeName">Name</string>
+    <string name="inGameVolume">Enable/Disable InGame Volume</string>
+    <string name="changeLanguage">Change Language</string>
 
     <string-array name="galaxyOneSolarSystems">
         <item></item>
