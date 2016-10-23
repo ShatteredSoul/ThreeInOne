@@ -12,13 +12,14 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
     SaveData saveData = new SaveData(MainActivity.this);
 
-    private static boolean volume = false;
+    private static boolean volume = false, settings = true;
     private View vv;
 
     @Override
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(ui);
                     break;
                 case R.id.settingsButton:
+                    settings = true;
                     registerForContextMenu(v);
                     openContextMenu(v);
                     vv = v;
@@ -102,27 +104,46 @@ public class MainActivity extends AppCompatActivity {
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu, v, menuInfo);
 
-        if(v.getId() == R.id.settingsButton)
+        if(settings) {
             getMenuInflater().inflate(R.menu.settings_menu, menu);
+            System.out.println("Clicked");
+        }
         else
             getMenuInflater().inflate(R.menu.language_menu, menu);
     }
 
     public boolean onContextItemSelected(MenuItem item){
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
-        switch (item.getItemId()){
-            case R.id.inGameVolume:
-                AudioManager volumeControl = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-                if(volume)
-                    volumeControl.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
-                else
-                    volumeControl.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 100);
-                break;
-            case R.id.changeGameLanguage:
-                closeContextMenu();
-                registerForContextMenu(vv);
-                openContextMenu(vv);
-                break;
+        if(settings) {
+            switch (item.getItemId()) {
+                case R.id.inGameVolume:
+                    AudioManager volumeControl = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                    if (volume) {
+                        volumeControl.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
+                        Toast.makeText(this, R.string.volumeDisabled, Toast.LENGTH_SHORT).show();
+                    } else {
+                        volumeControl.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 100);
+                        Toast.makeText(this, R.string.volumeEnabled, Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                case R.id.changeGameLanguage:
+                    closeContextMenu();
+                    settings = false;
+                    registerForContextMenu(vv);
+                    openContextMenu(vv);
+                    break;
+            }
+        }else{
+            switch (item.getItemId()){
+                case R.id.languageOne:
+                    break;
+                case R.id.languageTwo:
+                    break;
+                case R.id.languageThree:
+                    break;
+                case R.id.languageFour:
+                    break;
+            }
         }
         return true;
     }

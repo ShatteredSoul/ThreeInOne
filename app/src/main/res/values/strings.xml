@@ -36,6 +36,12 @@
     <string name="galaxyThreeName">Name</string>
     <string name="inGameVolume">Enable/Disable InGame Volume</string>
     <string name="changeLanguage">Change Language</string>
+    <string name="volumeEnabled">Volume Enabled</string>
+    <string name="volumeDisabled">Volume Disabled</string>
+    <string name="languageOne">English</string>
+    <string name="languageTwo">Japanese</string>
+    <string name="languageThree">Spanish</string>
+    <string name="languageFour">Chinese</string>
 
     <string-array name="galaxyOneSolarSystems">
         <item></item>
