@@ -1,9 +1,14 @@
 package com.example.isanroman.threeinone;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Intent;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -14,6 +19,7 @@ import android.widget.ImageButton;
 public class UniverseMap extends AppCompatActivity {
 
     public static int galaxySelected;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -21,12 +27,21 @@ public class UniverseMap extends AppCompatActivity {
 
         ImageButton galaxyOneButton = (ImageButton)findViewById(R.id.galaxyOne);
         galaxyOneButton.setOnClickListener(onClickListener);
+        Animator rotationSetOne = (Animator) AnimatorInflater.loadAnimator(this, R.animator.circular_path);
+        rotationSetOne.setTarget(galaxyOneButton);
+        rotationSetOne.start();
 
         ImageButton galaxyTwoButton = (ImageButton)findViewById(R.id.galaxyTwo);
         galaxyTwoButton.setOnClickListener(onClickListener);
+        Animator rotationSetTwo = (Animator)AnimatorInflater.loadAnimator(this, R.animator.circular_path);
+        rotationSetTwo.setTarget(galaxyTwoButton);
+        rotationSetTwo.start();
 
         ImageButton galaxyThreeButton = (ImageButton)findViewById(R.id.galaxyThree);
         galaxyThreeButton.setOnClickListener(onClickListener);
+        Animator rotationSetThree = (Animator)AnimatorInflater.loadAnimator(this, R.animator.circular_path);
+        rotationSetThree.setTarget(galaxyThreeButton);
+        rotationSetThree.start();
 
         Button backButton = (Button)findViewById(R.id.umBackButton);
         backButton.setOnClickListener(onClickListener);

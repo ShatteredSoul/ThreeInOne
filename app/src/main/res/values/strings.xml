@@ -44,21 +44,33 @@
     <string name="languageFour">Chinese</string>
 
     <string-array name="galaxyOneSolarSystems">
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Galaxy1</item>
+        <item>Galaxy1</item>
+        <item>Galaxy1</item>
     </string-array>
 
     <string-array name="galaxyTwoSolarSystems">
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Galaxy2</item>
+        <item>Galaxy2</item>
+        <item>Galaxy2</item>
     </string-array>
 
     <string-array name="galaxyThreeSolarSystems">
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Galaxy3</item>
+        <item>Galaxy3</item>
+        <item>Galaxy3</item>
+    </string-array>
+
+    <string-array name="solarSystemOnePlanets">
+
+    </string-array>
+
+    <string-array name="solarSystemTwoPlanets">
+
+    </string-array>
+
+    <string-array name="solarSystemThreePlanets">
+        
     </string-array>
 
     <string-array name="shipItems">

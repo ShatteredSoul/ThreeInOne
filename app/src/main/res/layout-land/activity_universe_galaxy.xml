@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp" />
 
     <TextView
         android:id="@+id/galaxyOneName"

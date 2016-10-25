@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 public class GalaxyMap extends AppCompatActivity {
 
+    private static int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -57,16 +59,19 @@ public class GalaxyMap extends AppCompatActivity {
                     onBackPressed();
                     break;
                 case R.id.solarSystemOne:
+                    setSolarSystem(R.id.solarSystemOne);
                     Intent i = new Intent(GalaxyMap.this, SolarMap.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(i);
                     break;
                 case R.id.solarSystemTwo:
+                    setSolarSystem(R.id.solarSystemTwo);
                     Intent ii = new Intent(GalaxyMap.this, SolarMap.class);
                     ii.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(ii);
                     break;
                 case R.id.solarSystemThree:
+                    setSolarSystem(R.id.solarSystemThree);
                     Intent iii = new Intent(GalaxyMap.this, SolarMap.class);
                     iii.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(iii);
@@ -79,5 +84,13 @@ public class GalaxyMap extends AppCompatActivity {
     protected void onPause(){
         super.onPause();
         overridePendingTransition(0,0);
+    }
+
+    public static void setSolarSystem(int i){
+        id = i;
+    }
+
+    public static int getSolarSystem(){
+        return id;
     }
 }
