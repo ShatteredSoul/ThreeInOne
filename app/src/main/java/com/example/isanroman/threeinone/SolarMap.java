@@ -1,6 +1,5 @@
 package com.example.isanroman.threeinone;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;

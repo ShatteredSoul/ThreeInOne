@@ -2,13 +2,15 @@ package com.example.isanroman.threeinone;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
-import android.animation.AnimatorSet;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Path;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
-import android.view.animation.TranslateAnimation;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -19,32 +21,50 @@ import android.widget.ImageButton;
 public class UniverseMap extends AppCompatActivity {
 
     public static int galaxySelected;
+    private static int width, height;
+    private static DisplayMetrics dm = new DisplayMetrics();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_universe_galaxy);
 
-        ImageButton galaxyOneButton = (ImageButton)findViewById(R.id.galaxyOne);
+        final ImageButton galaxyOneButton = (ImageButton) findViewById(R.id.galaxyOne);
         galaxyOneButton.setOnClickListener(onClickListener);
         Animator rotationSetOne = (Animator) AnimatorInflater.loadAnimator(this, R.animator.circular_path);
         rotationSetOne.setTarget(galaxyOneButton);
         rotationSetOne.start();
 
-        ImageButton galaxyTwoButton = (ImageButton)findViewById(R.id.galaxyTwo);
+        final ImageButton galaxyTwoButton = (ImageButton) findViewById(R.id.galaxyTwo);
         galaxyTwoButton.setOnClickListener(onClickListener);
-        Animator rotationSetTwo = (Animator)AnimatorInflater.loadAnimator(this, R.animator.circular_path);
+        Animator rotationSetTwo = (Animator) AnimatorInflater.loadAnimator(this, R.animator.circular_path);
         rotationSetTwo.setTarget(galaxyTwoButton);
         rotationSetTwo.start();
 
-        ImageButton galaxyThreeButton = (ImageButton)findViewById(R.id.galaxyThree);
+        ImageButton galaxyThreeButton = (ImageButton) findViewById(R.id.galaxyThree);
         galaxyThreeButton.setOnClickListener(onClickListener);
-        Animator rotationSetThree = (Animator)AnimatorInflater.loadAnimator(this, R.animator.circular_path);
+        Animator rotationSetThree = (Animator) AnimatorInflater.loadAnimator(this, R.animator.circular_path);
         rotationSetThree.setTarget(galaxyThreeButton);
         rotationSetThree.start();
 
-        Button backButton = (Button)findViewById(R.id.umBackButton);
+        Button backButton = (Button) findViewById(R.id.umBackButton);
         backButton.setOnClickListener(onClickListener);
+
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        width = dm.widthPixels;
+        height = dm.heightPixels;
+
+        if (galaxyOneButton.getX() != (width - 50)) {
+            double y = (-(50 - galaxyTwoButton.getY()) * Math.sqrt(1 - (Math.pow((galaxyOneButton.getX() + 1) - galaxyTwoButton.getX(), 2) / Math.pow(50 - galaxyTwoButton.getY(), 2)))) + galaxyTwoButton.getY();
+            double x = galaxyOneButton.getX();
+            galaxyOneButton.setX((float) x);
+            galaxyOneButton.setY((float) y);
+        }
+
+       /* if(true) {
+            this.findViewById(android.R.id.content).invalidate();
+        }*/
+       // getWindow().getDecorView().findViewById(android.R.id.content).invalidate();
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {

@@ -5,16 +5,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/stars_background">
 
+
     <ImageButton
         android:id="@+id/galaxyOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp" />
+        android:layout_above="@+id/galaxyTwoName"
+        android:layout_alignLeft="@+id/galaxyOneName"
+        android:layout_alignStart="@+id/galaxyOneName" />
 
     <TextView
         android:id="@+id/galaxyOneName"
