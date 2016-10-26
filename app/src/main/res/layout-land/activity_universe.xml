@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/stars_background">
+
+    <ImageButton
+        android:id="@+id/galaxyOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/galaxyTwoName"
+        android:layout_alignLeft="@+id/galaxyOneName"
+        android:layout_alignStart="@+id/galaxyOneName" />
+
+    <TextView
+        android:id="@+id/galaxyOneName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/galaxyOne"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:text="@string/galaxyOneName"
+        android:textColor="#CCCCCC"/>
+
+    <ImageButton
+        android:id="@+id/galaxyTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/galaxyTwoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/galaxyTwo"
+        android:layout_centerHorizontal="true"
+        android:text="@string/galaxyTwoName"
+        android:textColor="#CCCCCC"/>
+
+    <ImageButton
+        android:id="@+id/galaxyThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="50dp"/>
+
+    <TextView
+        android:id="@+id/galaxyThreeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/galaxyThree"
+        android:layout_alignLeft="@+id/galaxyThree"
+        android:layout_alignStart="@+id/galaxyThree"
+        android:layout_marginTop="20dp"
+        android:text="@string/galaxyThreeName"
+        android:textColor="#CCCCCC"/>
+
+    <Button
+        android:id="@+id/umBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <ImageButton
+        android:id="@+id/solarSystemOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/solarSystemOneName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/solarSystemOne"
+        android:layout_centerHorizontal="true"
+        android:textColor="#CCCCCC"/>
+
+    <ImageButton
+        android:id="@+id/solarSystemTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"/>
+
+    <TextView
+        android:id="@+id/solarSystemTwoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/solarSystemTwo"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:textColor="#CCCCCC"/>
+
+    <ImageButton
+        android:id="@+id/solarSystemThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"/>
+
+    <TextView
+        android:id="@+id/solarSystemThreeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/solarSystemThree"
+        android:layout_alignLeft="@+id/solarSystemThree"
+        android:layout_alignStart="@+id/solarSystemThree"
+        android:layout_marginTop="20dp"
+        android:textColor="#CCCCCC"/>
+
+    <ImageButton
+        android:id="@+id/planetOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/planetOneName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/planetTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/planetTwoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/planetThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/planetThreeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/planetFour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/planetFourName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/planetFive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/planetFiveName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

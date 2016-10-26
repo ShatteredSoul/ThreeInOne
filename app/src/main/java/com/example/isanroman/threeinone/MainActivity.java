@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(ei);
                     break;
                 case R.id.universeButton:
-                    Intent ui = new Intent(MainActivity.this, UniverseMap.class);
+                    Intent ui = new Intent(MainActivity.this, Universe.class);
                     startActivity(ui);
                     break;
                 case R.id.settingsButton:

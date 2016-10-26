@@ -30,21 +30,7 @@
                 <category android:name="android.intent.category.ALTERNATIVE"/>
             </intent-filter>
         </activity>
-        <activity android:name=".UniverseMap"
-            android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.ALTERNATIVE"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".GalaxyMap"
-            android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.ALTERNATIVE"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".SolarMap"
+        <activity android:name=".Universe"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
