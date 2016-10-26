@@ -62,16 +62,44 @@
     </string-array>
 
     <string-array name="solarSystemOnePlanets">
-
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
     </string-array>
 
     <string-array name="solarSystemTwoPlanets">
-
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
     </string-array>
 
     <string-array name="solarSystemThreePlanets">
-        
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
     </string-array>
+
+    <string-array name="systemOnePlanetOne"></string-array>
+    <string-array name="systemOnePlanetTwo"></string-array>
+    <string-array name="systemOnePlanetThree"></string-array>
+    <string-array name="systemOnePlanetFour"></string-array>
+    <string-array name="systemOnePlanetFive"></string-array>
+    <string-array name="systemTwoPlanetOne"></string-array>
+    <string-array name="systemTwoPlanetTwo"></string-array>
+    <string-array name="systemTwoPlanetThree"></string-array>
+    <string-array name="systemTwoPlanetFour"></string-array>
+    <string-array name="systemTwoPlanetFive"></string-array>
+    <string-array name="systemThreePlanetOne"></string-array>
+    <string-array name="systemThreePlanetTwo"></string-array>
+    <string-array name="systemThreePlanetThree"></string-array>
+    <string-array name="systemThreePlanetFour"></string-array>
+    <string-array name="systemThreePlanetFive"></string-array>
 
     <string-array name="shipItems">
 
