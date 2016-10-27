@@ -14,6 +14,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LocaleHelper.onCreate(this, "en");
+
+        LocaleHelper.onCreate(this, Locale.getDefault().toString());
         setContentView(R.layout.activity_main);
 
         setResources();
@@ -136,12 +139,20 @@ public class MainActivity extends AppCompatActivity {
         }else{
             switch (item.getItemId()){
                 case R.id.languageOne:
+                    LocaleHelper.setLocale(this, "en");
+                    updateUI();
                     break;
                 case R.id.languageTwo:
+                    LocaleHelper.setLocale(this, "ja");
+                    updateUI();
                     break;
                 case R.id.languageThree:
+                    LocaleHelper.setLocale(this, "es");
+                    updateUI();
                     break;
                 case R.id.languageFour:
+                    LocaleHelper.setLocale(this, "ch");
+                    updateUI();
                     break;
             }
         }
