@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -87,6 +88,10 @@ public class Universe extends AppCompatActivity {
         TextView planetThreeName = (TextView)findViewById(R.id.planetThreeName);
         TextView planetFourName = (TextView)findViewById(R.id.planetFourName);
         TextView planetFiveName = (TextView)findViewById(R.id.planetFiveName);
+        TextView planetName = (TextView)findViewById(R.id.planetName);
+        TextView planetLevelRange = (TextView)findViewById(R.id.planetLevelRange);
+        TextView galaxyName = (TextView)findViewById(R.id.galaxyName);
+        TextView solarName = (TextView)findViewById(R.id.solarSystemName);
 
         solarSystemOneName.setVisibility(View.INVISIBLE);
         solarSystemTwoName.setVisibility(View.INVISIBLE);
@@ -96,13 +101,26 @@ public class Universe extends AppCompatActivity {
         planetThreeName.setVisibility(View.INVISIBLE);
         planetFourName.setVisibility(View.INVISIBLE);
         planetFiveName.setVisibility(View.INVISIBLE);
+        planetName.setVisibility(View.INVISIBLE);
+        planetLevelRange.setVisibility(View.INVISIBLE);
+        galaxyName.setVisibility(View.INVISIBLE);
+        solarName.setVisibility(View.INVISIBLE);
+
+        ImageView planetImage = (ImageView)findViewById(R.id.planetImage);
+        planetImage.setVisibility(View.INVISIBLE);
 
         galaxyOneName.setText(galaxyNames[0]);
         galaxyTwoName.setText(galaxyNames[1]);
         galaxyThreeName.setText(galaxyNames[2]);
 
         Button backButton = (Button)findViewById(R.id.umBackButton);
+        Button planetSelect = (Button)findViewById(R.id.selectPlanet);
+
         backButton.setOnClickListener(onClickListener);
+        planetSelect.setOnClickListener(onClickListener);
+
+        backButton.setVisibility(View.VISIBLE);
+        planetSelect.setVisibility(View.INVISIBLE);
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -140,16 +158,33 @@ public class Universe extends AppCompatActivity {
                     updateUI();
                     break;
                 case R.id.planetOne:
+                    planet = true;
+                    planetOne = true;
+                    updateUI();
                     break;
                 case R.id.planetTwo:
+                    planet = true;
+                    planetTwo = true;
+                    updateUI();
                     break;
                 case R.id.planetThree:
+                    planet = true;
+                    planetThree = true;
+                    updateUI();
                     break;
                 case R.id.planetFour:
+                    planet = true;
+                    planetFour = true;
+                    updateUI();
                     break;
                 case R.id.planetFive:
+                    planet = true;
+                    planetFive = true;
+                    updateUI();
                     break;
                 case R.id.umBackButton:
+                    break;
+                case R.id.selectPlanet:
                     break;
             }
         }
@@ -267,19 +302,368 @@ public class Universe extends AppCompatActivity {
         }
         else if(planet){
 
+            TextView planetName = (TextView)findViewById(R.id.planetName);
+            TextView planetLevelRange = (TextView)findViewById(R.id.planetLevelRange);
+            TextView galaxyName = (TextView)findViewById(R.id.galaxyName);
+            TextView solarName = (TextView)findViewById(R.id.solarSystemName);
+
+            planetName.setVisibility(View.VISIBLE);
+            planetLevelRange.setVisibility(View.VISIBLE);
+            galaxyName.setVisibility(View.VISIBLE);
+            solarName.setVisibility(View.VISIBLE);
+
+            ImageView planetImage = (ImageView)findViewById(R.id.planetImage);
+            planetImage.setVisibility(View.VISIBLE);
+
+            String temp[];
+
+            if(galaxyOne){
+
+                if(solarOne){
+
+                    if(planetOne){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemOnePlanetOne);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetTwo){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemOnePlanetTwo);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetThree){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemOnePlanetThree);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetFour){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemOnePlanetFour);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else{
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemOnePlanetFive);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }
+
+                }else if(solarTwo){
+
+                    if(planetOne){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemTwoPlanetOne);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetTwo){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemTwoPlanetTwo);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetThree){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemTwoPlanetThree);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetFour){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemTwoPlanetFour);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else{
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemTwoPlanetFive);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }
+
+                }else{
+
+                    if(planetOne){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemThreePlanetOne);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetTwo){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemThreePlanetTwo);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetThree){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemThreePlanetThree);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetFour){
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemThreePlanetFour);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else{
+                        temp = getResources().getStringArray(R.array.galaxyOneSystemThreePlanetFive);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }
+
+                }
+
+            }else if(galaxyTwo){
+
+                if(solarOne){
+
+                    if(planetOne){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemOnePlanetOne);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetTwo){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemOnePlanetTwo);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetThree){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemOnePlanetThree);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetFour){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemOnePlanetFour);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else{
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemOnePlanetFive);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }
+
+                }else if(solarTwo){
+
+                    if(planetOne){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemTwoPlanetOne);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetTwo){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemTwoPlanetTwo);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetThree){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemTwoPlanetThree);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetFour){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemTwoPlanetFour);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else{
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemTwoPlanetFive);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }
+
+                }else{
+
+                    if(planetOne){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemThreePlanetOne);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetTwo){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemThreePlanetTwo);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetThree){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemThreePlanetThree);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetFour){
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemThreePlanetFour);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else{
+                        temp = getResources().getStringArray(R.array.galaxyTwoSystemThreePlanetFive);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }
+
+                }
+
+            }else{
+
+                if(solarOne){
+
+                    if(planetOne){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemOnePlanetOne);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetTwo){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemOnePlanetTwo);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetThree){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemOnePlanetThree);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetFour){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemOnePlanetFour);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else{
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemOnePlanetFive);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }
+
+                }else if(solarTwo){
+
+                    if(planetOne){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemTwoPlanetOne);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetTwo){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemTwoPlanetTwo);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetThree){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemTwoPlanetThree);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetFour){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemTwoPlanetFour);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else{
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemTwoPlanetFive);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }
+
+                }else{
+
+                    if(planetOne){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemThreePlanetOne);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetTwo){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemThreePlanetTwo);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetThree){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemThreePlanetThree);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else if(planetFour){
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemThreePlanetFour);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }else{
+                        temp = getResources().getStringArray(R.array.galaxyThreeSystemThreePlanetFive);
+                        planetName.setText(temp[0]);
+                        planetLevelRange.setText(temp[1]);
+                        galaxyName.setText(temp[2]);
+                        solarName.setText(temp[3]);
+                    }
+                }
+
+            }
+
+            ImageButton planetOne = (ImageButton)findViewById(R.id.planetOne);
+            ImageButton planetTwo = (ImageButton)findViewById(R.id.planetTwo);
+            ImageButton planetThree = (ImageButton)findViewById(R.id.planetThree);
+            ImageButton planetFour = (ImageButton)findViewById(R.id.planetFour);
+            ImageButton planetFive = (ImageButton)findViewById(R.id.planetFive);
+
+            TextView planetOneName = (TextView)findViewById(R.id.planetOneName);
+            TextView planetTwoName = (TextView)findViewById(R.id.planetTwoName);
+            TextView planetThreeName = (TextView)findViewById(R.id.planetThreeName);
+            TextView planetFourName = (TextView)findViewById(R.id.planetFourName);
+            TextView planetFiveName = (TextView)findViewById(R.id.planetFiveName);
+
+            planetOne.setVisibility(View.INVISIBLE);
+            planetTwo.setVisibility(View.INVISIBLE);
+            planetThree.setVisibility(View.INVISIBLE);
+            planetFour.setVisibility(View.INVISIBLE);
+            planetFive.setVisibility(View.INVISIBLE);
+
+            planetOneName.setVisibility(View.INVISIBLE);
+            planetTwoName.setVisibility(View.INVISIBLE);
+            planetThreeName.setVisibility(View.INVISIBLE);
+            planetFourName.setVisibility(View.INVISIBLE);
+            planetFiveName.setVisibility(View.INVISIBLE);
+
+            Button selectPlanet = (Button)findViewById(R.id.selectPlanet);
+            selectPlanet.setVisibility(View.VISIBLE);
+
         }
 
-
-
-
-
-        galaxy = false;
-        galaxyOne = false;
-        galaxyTwo = false;
-        galaxyThree = false;
-        solar = false;
-        solarOne = false;
-        solarTwo = false;
-        solarThree = false;
     }
 }

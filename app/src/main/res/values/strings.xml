@@ -85,21 +85,51 @@
         <item>PlanetOne</item>
     </string-array>
 
-    <string-array name="systemOnePlanetOne"></string-array>
-    <string-array name="systemOnePlanetTwo"></string-array>
-    <string-array name="systemOnePlanetThree"></string-array>
-    <string-array name="systemOnePlanetFour"></string-array>
-    <string-array name="systemOnePlanetFive"></string-array>
-    <string-array name="systemTwoPlanetOne"></string-array>
-    <string-array name="systemTwoPlanetTwo"></string-array>
-    <string-array name="systemTwoPlanetThree"></string-array>
-    <string-array name="systemTwoPlanetFour"></string-array>
-    <string-array name="systemTwoPlanetFive"></string-array>
-    <string-array name="systemThreePlanetOne"></string-array>
-    <string-array name="systemThreePlanetTwo"></string-array>
-    <string-array name="systemThreePlanetThree"></string-array>
-    <string-array name="systemThreePlanetFour"></string-array>
-    <string-array name="systemThreePlanetFive"></string-array>
+    <string-array name="galaxyOneSystemOnePlanetOne"></string-array>
+    <string-array name="galaxyOneSystemOnePlanetTwo"></string-array>
+    <string-array name="galaxyOneSystemOnePlanetThree"></string-array>
+    <string-array name="galaxyOneSystemOnePlanetFour"></string-array>
+    <string-array name="galaxyOneSystemOnePlanetFive"></string-array>
+    <string-array name="galaxyOneSystemTwoPlanetOne"></string-array>
+    <string-array name="galaxyOneSystemTwoPlanetTwo"></string-array>
+    <string-array name="galaxyOneSystemTwoPlanetThree"></string-array>
+    <string-array name="galaxyOneSystemTwoPlanetFour"></string-array>
+    <string-array name="galaxyOneSystemTwoPlanetFive"></string-array>
+    <string-array name="galaxyOneSystemThreePlanetOne"></string-array>
+    <string-array name="galaxyOneSystemThreePlanetTwo"></string-array>
+    <string-array name="galaxyOneSystemThreePlanetThree"></string-array>
+    <string-array name="galaxyOneSystemThreePlanetFour"></string-array>
+    <string-array name="galaxyOneSystemThreePlanetFive"></string-array>
+    <string-array name="galaxyTwoSystemOnePlanetOne"></string-array>
+    <string-array name="galaxyTwoSystemOnePlanetTwo"></string-array>
+    <string-array name="galaxyTwoSystemOnePlanetThree"></string-array>
+    <string-array name="galaxyTwoSystemOnePlanetFour"></string-array>
+    <string-array name="galaxyTwoSystemOnePlanetFive"></string-array>
+    <string-array name="galaxyTwoSystemTwoPlanetOne"></string-array>
+    <string-array name="galaxyTwoSystemTwoPlanetTwo"></string-array>
+    <string-array name="galaxyTwoSystemTwoPlanetThree"></string-array>
+    <string-array name="galaxyTwoSystemTwoPlanetFour"></string-array>
+    <string-array name="galaxyTwoSystemTwoPlanetFive"></string-array>
+    <string-array name="galaxyTwoSystemThreePlanetOne"></string-array>
+    <string-array name="galaxyTwoSystemThreePlanetTwo"></string-array>
+    <string-array name="galaxyTwoSystemThreePlanetThree"></string-array>
+    <string-array name="galaxyTwoSystemThreePlanetFour"></string-array>
+    <string-array name="galaxyTwoSystemThreePlanetFive"></string-array>
+    <string-array name="galaxyThreeSystemOnePlanetOne"></string-array>
+    <string-array name="galaxyThreeSystemOnePlanetTwo"></string-array>
+    <string-array name="galaxyThreeSystemOnePlanetThree"></string-array>
+    <string-array name="galaxyThreeSystemOnePlanetFour"></string-array>
+    <string-array name="galaxyThreeSystemOnePlanetFive"></string-array>
+    <string-array name="galaxyThreeSystemTwoPlanetOne"></string-array>
+    <string-array name="galaxyThreeSystemTwoPlanetTwo"></string-array>
+    <string-array name="galaxyThreeSystemTwoPlanetThree"></string-array>
+    <string-array name="galaxyThreeSystemTwoPlanetFour"></string-array>
+    <string-array name="galaxyThreeSystemTwoPlanetFive"></string-array>
+    <string-array name="galaxyThreeSystemThreePlanetOne"></string-array>
+    <string-array name="galaxyThreeSystemThreePlanetTwo"></string-array>
+    <string-array name="galaxyThreeSystemThreePlanetThree"></string-array>
+    <string-array name="galaxyThreeSystemThreePlanetFour"></string-array>
+    <string-array name="galaxyThreeSystemThreePlanetFive"></string-array>
 
     <string-array name="shipItems">
 
