@@ -42,26 +42,83 @@
     <string name="languageTwo">Japanese</string>
     <string name="languageThree">Spanish</string>
     <string name="languageFour">Chinese</string>
+    <string name="selectPlanet">Select Planet</string>
+    <string name="Fire">Fire</string>
+    <string name="I">I</string>
 
     <string-array name="galaxyOneSolarSystems">
         <item>Galaxy1</item>
         <item>Galaxy1</item>
         <item>Galaxy1</item>
     </string-array>
-
     <string-array name="galaxyTwoSolarSystems">
         <item>Galaxy2</item>
         <item>Galaxy2</item>
         <item>Galaxy2</item>
     </string-array>
-
     <string-array name="galaxyThreeSolarSystems">
         <item>Galaxy3</item>
         <item>Galaxy3</item>
         <item>Galaxy3</item>
     </string-array>
 
-    <string-array name="solarSystemOnePlanets">
+    <string-array name="galaxyOneSystemOnePlanets">
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+    </string-array>
+    <string-array name="galaxyOneSystemTwoPlanets">
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+    </string-array>
+    <string-array name="galaxyOneSystemThreePlanets">
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemOnePlanets">
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemTwoPlanets">
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemThreePlanets">
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemOnePlanets">
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemTwoPlanets">
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+        <item>PlanetOne</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemThreePlanets">
         <item>PlanetOne</item>
         <item>PlanetOne</item>
         <item>PlanetOne</item>
@@ -69,67 +126,276 @@
         <item>PlanetOne</item>
     </string-array>
 
-    <string-array name="solarSystemTwoPlanets">
-        <item>PlanetOne</item>
-        <item>PlanetOne</item>
-        <item>PlanetOne</item>
-        <item>PlanetOne</item>
-        <item>PlanetOne</item>
+    <string-array name="galaxyOneSystemOnePlanetOne">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
     </string-array>
-
-    <string-array name="solarSystemThreePlanets">
-        <item>PlanetOne</item>
-        <item>PlanetOne</item>
-        <item>PlanetOne</item>
-        <item>PlanetOne</item>
-        <item>PlanetOne</item>
+    <string-array name="galaxyOneSystemOnePlanetTwo">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
     </string-array>
-
-    <string-array name="galaxyOneSystemOnePlanetOne"></string-array>
-    <string-array name="galaxyOneSystemOnePlanetTwo"></string-array>
-    <string-array name="galaxyOneSystemOnePlanetThree"></string-array>
-    <string-array name="galaxyOneSystemOnePlanetFour"></string-array>
-    <string-array name="galaxyOneSystemOnePlanetFive"></string-array>
-    <string-array name="galaxyOneSystemTwoPlanetOne"></string-array>
-    <string-array name="galaxyOneSystemTwoPlanetTwo"></string-array>
-    <string-array name="galaxyOneSystemTwoPlanetThree"></string-array>
-    <string-array name="galaxyOneSystemTwoPlanetFour"></string-array>
-    <string-array name="galaxyOneSystemTwoPlanetFive"></string-array>
-    <string-array name="galaxyOneSystemThreePlanetOne"></string-array>
-    <string-array name="galaxyOneSystemThreePlanetTwo"></string-array>
-    <string-array name="galaxyOneSystemThreePlanetThree"></string-array>
-    <string-array name="galaxyOneSystemThreePlanetFour"></string-array>
-    <string-array name="galaxyOneSystemThreePlanetFive"></string-array>
-    <string-array name="galaxyTwoSystemOnePlanetOne"></string-array>
-    <string-array name="galaxyTwoSystemOnePlanetTwo"></string-array>
-    <string-array name="galaxyTwoSystemOnePlanetThree"></string-array>
-    <string-array name="galaxyTwoSystemOnePlanetFour"></string-array>
-    <string-array name="galaxyTwoSystemOnePlanetFive"></string-array>
-    <string-array name="galaxyTwoSystemTwoPlanetOne"></string-array>
-    <string-array name="galaxyTwoSystemTwoPlanetTwo"></string-array>
-    <string-array name="galaxyTwoSystemTwoPlanetThree"></string-array>
-    <string-array name="galaxyTwoSystemTwoPlanetFour"></string-array>
-    <string-array name="galaxyTwoSystemTwoPlanetFive"></string-array>
-    <string-array name="galaxyTwoSystemThreePlanetOne"></string-array>
-    <string-array name="galaxyTwoSystemThreePlanetTwo"></string-array>
-    <string-array name="galaxyTwoSystemThreePlanetThree"></string-array>
-    <string-array name="galaxyTwoSystemThreePlanetFour"></string-array>
-    <string-array name="galaxyTwoSystemThreePlanetFive"></string-array>
-    <string-array name="galaxyThreeSystemOnePlanetOne"></string-array>
-    <string-array name="galaxyThreeSystemOnePlanetTwo"></string-array>
-    <string-array name="galaxyThreeSystemOnePlanetThree"></string-array>
-    <string-array name="galaxyThreeSystemOnePlanetFour"></string-array>
-    <string-array name="galaxyThreeSystemOnePlanetFive"></string-array>
-    <string-array name="galaxyThreeSystemTwoPlanetOne"></string-array>
-    <string-array name="galaxyThreeSystemTwoPlanetTwo"></string-array>
-    <string-array name="galaxyThreeSystemTwoPlanetThree"></string-array>
-    <string-array name="galaxyThreeSystemTwoPlanetFour"></string-array>
-    <string-array name="galaxyThreeSystemTwoPlanetFive"></string-array>
-    <string-array name="galaxyThreeSystemThreePlanetOne"></string-array>
-    <string-array name="galaxyThreeSystemThreePlanetTwo"></string-array>
-    <string-array name="galaxyThreeSystemThreePlanetThree"></string-array>
-    <string-array name="galaxyThreeSystemThreePlanetFour"></string-array>
-    <string-array name="galaxyThreeSystemThreePlanetFive"></string-array>
+    <string-array name="galaxyOneSystemOnePlanetThree">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemOnePlanetFour">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemOnePlanetFive">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemTwoPlanetOne">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemTwoPlanetTwo">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemTwoPlanetThree">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemTwoPlanetFour">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemTwoPlanetFive">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemThreePlanetOne">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemThreePlanetTwo">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemThreePlanetThree">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemThreePlanetFour">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyOneSystemThreePlanetFive">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemOnePlanetOne">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemOnePlanetTwo">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemOnePlanetThree">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemOnePlanetFour">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemOnePlanetFive">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemTwoPlanetOne">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemTwoPlanetTwo">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemTwoPlanetThree">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemTwoPlanetFour">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemTwoPlanetFive">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemThreePlanetOne">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemThreePlanetTwo">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemThreePlanetThree">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemThreePlanetFour">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyTwoSystemThreePlanetFive">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemOnePlanetOne">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemOnePlanetTwo">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemOnePlanetThree">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemOnePlanetFour">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemOnePlanetFive">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemTwoPlanetOne">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemTwoPlanetTwo">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemTwoPlanetThree">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemTwoPlanetFour">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemTwoPlanetFive">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemThreePlanetOne">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemThreePlanetTwo">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemThreePlanetThree">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemThreePlanetFour">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
+    <string-array name="galaxyThreeSystemThreePlanetFive">
+        <item>Name:</item>
+        <item>Level Range:</item>
+        <item>Galaxy:</item>
+        <item>System:</item>
+    </string-array>
 
     <string-array name="shipItems">
 

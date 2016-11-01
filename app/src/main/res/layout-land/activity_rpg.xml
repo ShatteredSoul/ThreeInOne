@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/fireButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="#ad2004"
+        android:text="@string/Fire"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp" />
+
+    <Button
+        android:id="@+id/inventoryButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/roundedbutton"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/fireButton"
+        android:layout_toStartOf="@id/fireButton"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#CCCCCC"
+        android:text="@string/I"/>
+
+</RelativeLayout>

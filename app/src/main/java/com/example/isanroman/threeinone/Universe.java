@@ -1,5 +1,6 @@
 package com.example.isanroman.threeinone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -18,10 +19,6 @@ public class Universe extends AppCompatActivity {
     String solarSystemOneNames[];
     String solarSystemTwoNames[];
     String solarSystemThreeNames[];
-    String systemOnePlanetNames[];
-    String systemTwoPlanetNames[];
-    String systemThreePlanetNames[];
-    String planetInformation[];
 
     boolean galaxy = false, solar = false, planet = false;
     boolean galaxyOne = false, galaxyTwo = false, galaxyThree = false;
@@ -40,9 +37,6 @@ public class Universe extends AppCompatActivity {
         solarSystemOneNames = getResources().getStringArray(R.array.galaxyOneSolarSystems);
         solarSystemTwoNames = getResources().getStringArray(R.array.galaxyTwoSolarSystems);
         solarSystemThreeNames = getResources().getStringArray(R.array.galaxyThreeSolarSystems);
-        systemOnePlanetNames = getResources().getStringArray(R.array.solarSystemOnePlanets);
-        systemTwoPlanetNames = getResources().getStringArray(R.array.solarSystemTwoPlanets);
-        systemThreePlanetNames = getResources().getStringArray(R.array.solarSystemThreePlanets);
 
         ImageButton galaxyOne = (ImageButton)findViewById(R.id.galaxyOne);
         ImageButton galaxyTwo = (ImageButton)findViewById(R.id.galaxyTwo);
@@ -107,7 +101,10 @@ public class Universe extends AppCompatActivity {
         solarName.setVisibility(View.INVISIBLE);
 
         ImageView planetImage = (ImageView)findViewById(R.id.planetImage);
+        ImageView sunImage = (ImageView)findViewById(R.id.sunImage);
+
         planetImage.setVisibility(View.INVISIBLE);
+        sunImage.setVisibility(View.INVISIBLE);
 
         galaxyOneName.setText(galaxyNames[0]);
         galaxyTwoName.setText(galaxyNames[1]);
@@ -185,6 +182,8 @@ public class Universe extends AppCompatActivity {
                 case R.id.umBackButton:
                     break;
                 case R.id.selectPlanet:
+                    Intent sp = new Intent(Universe.this, RPG.class);
+                    startActivity(sp);
                     break;
             }
         }
@@ -238,6 +237,8 @@ public class Universe extends AppCompatActivity {
             solarOne.setVisibility(View.VISIBLE);
             solarTwo.setVisibility(View.VISIBLE);
             solarThree.setVisibility(View.VISIBLE);
+
+            galaxy = false;
         }
         else if(solar){
             TextView planetOneName = (TextView)findViewById(R.id.planetOneName);
@@ -252,24 +253,83 @@ public class Universe extends AppCompatActivity {
             planetFourName.setVisibility(View.VISIBLE);
             planetFiveName.setVisibility(View.VISIBLE);
 
-            if(solarOne){
-                planetOneName.setText(systemOnePlanetNames[0]);
-                planetTwoName.setText(systemOnePlanetNames[1]);
-                planetThreeName.setText(systemOnePlanetNames[2]);
-                planetFourName.setText(systemOnePlanetNames[3]);
-                planetFiveName.setText(systemOnePlanetNames[4]);
-            }else if(solarTwo){
-                planetOneName.setText(systemTwoPlanetNames[0]);
-                planetTwoName.setText(systemTwoPlanetNames[1]);
-                planetThreeName.setText(systemTwoPlanetNames[2]);
-                planetFourName.setText(systemTwoPlanetNames[3]);
-                planetFiveName.setText(systemTwoPlanetNames[4]);
+            System.out.println("solar selected");
+            System.out.println(galaxyOne);
+            System.out.println(solarOne);
+            System.out.println(solarTwo);
+
+            String temp[];
+
+            if(galaxyOne){
+                if(solarOne){
+                    temp = getResources().getStringArray(R.array.galaxyOneSystemOnePlanets);
+                    System.out.println(temp[0]);
+                    planetOneName.setText(temp[0]);
+                    planetTwoName.setText(temp[1]);
+                    planetThreeName.setText(temp[2]);
+                    planetFourName.setText(temp[3]);
+                    planetFiveName.setText(temp[4]);
+                }else if(solarTwo){
+                    temp = getResources().getStringArray(R.array.galaxyOneSystemTwoPlanets);
+                    planetOneName.setText(temp[0]);
+                    planetTwoName.setText(temp[1]);
+                    planetThreeName.setText(temp[2]);
+                    planetFourName.setText(temp[3]);
+                    planetFiveName.setText(temp[4]);
+                }else {
+                    temp = getResources().getStringArray(R.array.galaxyOneSystemThreePlanets);
+                    planetOneName.setText(temp[0]);
+                    planetTwoName.setText(temp[1]);
+                    planetThreeName.setText(temp[2]);
+                    planetFourName.setText(temp[3]);
+                    planetFiveName.setText(temp[4]);
+                }
+            }else if(galaxyTwo){
+                if(solarOne){
+                    temp = getResources().getStringArray(R.array.galaxyTwoSystemOnePlanets);
+                    planetOneName.setText(temp[0]);
+                    planetTwoName.setText(temp[1]);
+                    planetThreeName.setText(temp[2]);
+                    planetFourName.setText(temp[3]);
+                    planetFiveName.setText(temp[4]);
+                }else if(solarTwo){
+                    temp = getResources().getStringArray(R.array.galaxyTwoSystemTwoPlanets);
+                    planetOneName.setText(temp[0]);
+                    planetTwoName.setText(temp[1]);
+                    planetThreeName.setText(temp[2]);
+                    planetFourName.setText(temp[3]);
+                    planetFiveName.setText(temp[4]);
+                }else {
+                    temp = getResources().getStringArray(R.array.galaxyTwoSystemThreePlanets);
+                    planetOneName.setText(temp[0]);
+                    planetTwoName.setText(temp[1]);
+                    planetThreeName.setText(temp[2]);
+                    planetFourName.setText(temp[3]);
+                    planetFiveName.setText(temp[4]);
+                }
             }else{
-                planetOneName.setText(systemThreePlanetNames[0]);
-                planetTwoName.setText(systemThreePlanetNames[1]);
-                planetThreeName.setText(systemThreePlanetNames[2]);
-                planetFourName.setText(systemThreePlanetNames[3]);
-                planetFiveName.setText(systemThreePlanetNames[4]);
+                if(solarOne){
+                    temp = getResources().getStringArray(R.array.galaxyThreeSystemOnePlanets);
+                    planetOneName.setText(temp[0]);
+                    planetTwoName.setText(temp[1]);
+                    planetThreeName.setText(temp[2]);
+                    planetFourName.setText(temp[3]);
+                    planetFiveName.setText(temp[4]);
+                }else if(solarTwo){
+                    temp = getResources().getStringArray(R.array.galaxyThreeSystemTwoPlanets);
+                    planetOneName.setText(temp[0]);
+                    planetTwoName.setText(temp[1]);
+                    planetThreeName.setText(temp[2]);
+                    planetFourName.setText(temp[3]);
+                    planetFiveName.setText(temp[4]);
+                }else {
+                    temp = getResources().getStringArray(R.array.galaxyThreeSystemThreePlanets);
+                    planetOneName.setText(temp[0]);
+                    planetTwoName.setText(temp[1]);
+                    planetThreeName.setText(temp[2]);
+                    planetFourName.setText(temp[3]);
+                    planetFiveName.setText(temp[4]);
+                }
             }
 
             ImageButton solarOne = (ImageButton)findViewById(R.id.solarSystemOne);
@@ -299,6 +359,11 @@ public class Universe extends AppCompatActivity {
             planetThree.setVisibility(View.VISIBLE);
             planetFour.setVisibility(View.VISIBLE);
             planetFive.setVisibility(View.VISIBLE);
+
+            ImageView sunImage = (ImageView)findViewById(R.id.sunImage);
+            sunImage.setVisibility(View.VISIBLE);
+
+            solar = false;
         }
         else if(planet){
 
@@ -662,6 +727,8 @@ public class Universe extends AppCompatActivity {
 
             Button selectPlanet = (Button)findViewById(R.id.selectPlanet);
             selectPlanet.setVisibility(View.VISIBLE);
+
+            planet = false;
 
         }
 

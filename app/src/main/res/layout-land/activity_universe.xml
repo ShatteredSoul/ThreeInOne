@@ -7,9 +7,9 @@
         android:id="@+id/galaxyOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/galaxyTwoName"
-        android:layout_alignLeft="@+id/galaxyOneName"
-        android:layout_alignStart="@+id/galaxyOneName" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"/>
 
     <TextView
         android:id="@+id/galaxyOneName"
@@ -122,55 +122,113 @@
         android:layout_marginTop="20dp"
         android:textColor="#CCCCCC"/>
 
+    <ImageView
+        android:id="@+id/sunImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/economics_image"/>
+
     <ImageButton
         android:id="@+id/planetOne"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/sunImage"
+        android:layout_toEndOf="@id/sunImage"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"/>
 
     <TextView
         android:id="@+id/planetOneName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/planetOne"
+        android:layout_toRightOf="@id/sunImage"
+        android:layout_toEndOf="@id/sunImage"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp" />
 
     <ImageButton
         android:id="@+id/planetTwo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/planetOne"
+        android:layout_toEndOf="@id/planetOne"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"/>
 
     <TextView
         android:id="@+id/planetTwoName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/planetOne"
+        android:layout_toRightOf="@id/planetOne"
+        android:layout_below="@id/planetTwo"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"/>
 
     <ImageButton
         android:id="@+id/planetThree"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/planetTwo"
+        android:layout_toEndOf="@id/planetTwo"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"/>
 
     <TextView
         android:id="@+id/planetThreeName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/planetThree"
+        android:layout_toRightOf="@id/planetTwo"
+        android:layout_toEndOf="@id/planetTwo"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"/>
 
     <ImageButton
         android:id="@+id/planetFour"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/sunImage"
+        android:layout_toStartOf="@id/sunImage"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"/>
 
     <TextView
         android:id="@+id/planetFourName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/planetFour"
+        android:layout_toLeftOf="@id/sunImage"
+        android:layout_toStartOf="@id/sunImage"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"/>
 
     <ImageButton
         android:id="@+id/planetFive"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/planetFour"
+        android:layout_toStartOf="@id/planetFour"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"/>
 
     <TextView
         android:id="@+id/planetFiveName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/planetFive"
+        android:layout_toLeftOf="@id/planetFour"
+        android:layout_toStartOf="@id/planetFour"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"/>
 
     <ImageView
         android:id="@+id/planetImage"
@@ -200,14 +258,6 @@
         android:layout_alignStart="@+id/planetName"
         android:layout_marginTop="11dp" />
 
-    <Button
-        android:id="@+id/selectPlanet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:id="@+id/solarSystemName"
         android:layout_width="wrap_content"
@@ -227,4 +277,14 @@
         android:layout_alignBottom="@+id/planetName"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/selectPlanet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selectPlanet"
+        android:layout_alignBaseline="@+id/umBackButton"
+        android:layout_alignBottom="@+id/umBackButton"
+        android:layout_alignRight="@+id/planetOneName"
+        android:layout_alignEnd="@+id/planetOneName" />
 </RelativeLayout>
