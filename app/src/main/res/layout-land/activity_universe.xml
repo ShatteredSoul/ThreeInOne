@@ -142,6 +142,7 @@
 
     <TextView
         android:id="@+id/planetOneName"
+        android:textColor="#CCCCCC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/planetOne"
@@ -162,6 +163,7 @@
 
     <TextView
         android:id="@+id/planetTwoName"
+        android:textColor="#CCCCCC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/planetOne"
@@ -182,6 +184,7 @@
 
     <TextView
         android:id="@+id/planetThreeName"
+        android:textColor="#CCCCCC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/planetThree"
@@ -202,6 +205,7 @@
 
     <TextView
         android:id="@+id/planetFourName"
+        android:textColor="#CCCCCC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/planetFour"
@@ -222,6 +226,7 @@
 
     <TextView
         android:id="@+id/planetFiveName"
+        android:textColor="#CCCCCC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/planetFive"
@@ -240,6 +245,7 @@
 
     <TextView
         android:id="@+id/planetName"
+        android:textColor="#CCCCCC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -251,6 +257,7 @@
 
     <TextView
         android:id="@+id/planetLevelRange"
+        android:textColor="#CCCCCC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/planetName"
@@ -260,6 +267,7 @@
 
     <TextView
         android:id="@+id/solarSystemName"
+        android:textColor="#CCCCCC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/planetLevelRange"
@@ -269,6 +277,7 @@
 
     <TextView
         android:id="@+id/galaxyName"
+        android:textColor="#CCCCCC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="22dp"
@@ -283,8 +292,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/selectPlanet"
-        android:layout_alignBaseline="@+id/umBackButton"
-        android:layout_alignBottom="@+id/umBackButton"
-        android:layout_alignRight="@+id/planetOneName"
-        android:layout_alignEnd="@+id/planetOneName" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"/>
 </RelativeLayout>

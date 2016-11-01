@@ -61,7 +61,6 @@
         <item>Galaxy3</item>
         <item>Galaxy3</item>
     </string-array>
-
     <string-array name="galaxyOneSystemOnePlanets">
         <item>PlanetOne</item>
         <item>PlanetOne</item>
@@ -125,7 +124,6 @@
         <item>PlanetOne</item>
         <item>PlanetOne</item>
     </string-array>
-
     <string-array name="galaxyOneSystemOnePlanetOne">
         <item>Name:</item>
         <item>Level Range:</item>

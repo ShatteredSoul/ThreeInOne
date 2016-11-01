@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Inventory extends AppCompatActivity {
 
-    private static double userMoney = 50000000000000.0;
+    private static double userMoney = 50000.0;
     private static Map<String, Integer> userResources = new HashMap<>();
 
     public static void setMoney(double m){
@@ -62,7 +62,7 @@ public class Inventory extends AppCompatActivity {
         String finalString = "";
 
         for(int i = 0; i < temp.length(); i++){
-            if(temp.charAt(i) == ','){
+           if(temp.charAt(i) == ','){
 
             }else{
                 finalString += temp.charAt(i);

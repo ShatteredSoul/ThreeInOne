@@ -3,6 +3,7 @@ package com.example.isanroman.threeinone;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -29,6 +30,11 @@ public class Universe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_universe);
+
+        DisplayMetrics dm = new DisplayMetrics();
+        final int width;
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        width = dm.widthPixels;
 
         galaxyNames[0] = getResources().getString(R.string.galaxyOneName);
         galaxyNames[1] = getResources().getString(R.string.galaxyTwoName);
@@ -61,6 +67,7 @@ public class Universe extends AppCompatActivity {
         planetThree.setOnClickListener(onClickListener);
         planetFour.setOnClickListener(onClickListener);
         planetFive.setOnClickListener(onClickListener);
+
 
         solarSystemOne.setVisibility(View.INVISIBLE);
         solarSystemTwo.setVisibility(View.INVISIBLE);
