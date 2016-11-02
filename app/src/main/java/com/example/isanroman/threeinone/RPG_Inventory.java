@@ -12,5 +12,6 @@ public class RPG_Inventory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_rpg_inventory);
     }
 }

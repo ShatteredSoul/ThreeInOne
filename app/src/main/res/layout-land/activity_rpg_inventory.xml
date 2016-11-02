@@ -8,7 +8,6 @@
         android:id="@+id/inventoryTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inventory"
         android:textSize="24sp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
@@ -40,4 +39,100 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/legArmourImage"/>
+    <View
+        android:id="@+id/sideSpacer"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/helmentImage"
+        android:layout_toEndOf="@id/helmentImage"
+        android:layout_below="@id/topSpacer"/>
+    <Button
+        android:id="@+id/skillsButton"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"/>
+    <TextView
+        android:id="@+id/moneyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/inventoryTitle"
+        android:layout_toEndOf="@id/inventoryTitle"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"/>
+    <TextView
+        android:id="@+id/healthView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:id="@+id/shieldView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/healthView"
+        android:layout_toEndOf="@id/healthView"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"/>
+    <View
+        android:id="@+id/bottomSpacer"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_toRightOf="@id/sideSpacer"
+        android:layout_toEndOf="@id/sideSpacer"
+        android:layout_below="@id/legArmourImage"
+        android:background="#000000"/>
+    <ImageView
+        android:id="@+id/itemImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/sideSpacer"
+        android:layout_toEndOf="@id/sideSpacer"
+        android:layout_below="@id/bottomSpacer" />
+    <View
+        android:id="@+id/bottomMiddleSpacer"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bottomSpacer"
+        android:layout_toRightOf="@id/itemImage"
+        android:layout_toEndOf="@id/itemImage"
+        android:background="#000000"/>
+    <TextView
+        android:id="@+id/itemDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bottomSpacer"
+        android:layout_toRightOf="@id/bottomMiddleSpacer"
+        android:layout_toEndOf="@id/bottomMiddleSpacer"/>
+    <View
+        android:id="@+id/bottomSecondMiddleSpacer"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bottomSpacer"
+        android:layout_toRightOf="@id/itemDescription"
+        android:layout_toEndOf="@id/itemDescription"
+        android:background="#000000"/>
+    <Button
+        android:id="@+id/itemAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bottomSpacer"
+        android:layout_toRightOf="@id/bottomSecondMiddleSpacer"
+        android:layout_toEndOf="@id/bottomSecondMiddleSpacer"/>
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topSpacer"
+        android:layout_toRightOf="@id/sideSpacer"
+        android:layout_toEndOf="@id/sideSpacer"
+        android:layout_above="@id/bottomSpacer"
+        android:name="com.example.isanroman.threeinone.ListFragmentViewRPG"/>
 </RelativeLayout>
