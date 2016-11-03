@@ -3,7 +3,9 @@ package com.example.isanroman.threeinone;
 import android.support.v7.app.AppCompatActivity;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,6 +16,7 @@ public class Inventory extends AppCompatActivity {
 
     private static double userMoney = 50000.0;
     private static Map<String, Integer> userResources = new HashMap<>();
+    private static List<Integer> userItems = new ArrayList<>();
 
     public static void setMoney(double m){
         userMoney = m;
@@ -50,6 +53,35 @@ public class Inventory extends AppCompatActivity {
             return 0;
         else
             return userResources.get(name);
+    }
+
+    public static void addItem(int id){
+        userItems.add(id);
+    }
+
+    public static int getItem(int index){
+        return userItems.get(index);
+    }
+
+    public static void removeItem(int index){
+        userItems.remove(index);
+    }
+
+    public static String[] getUsersItemsNames(){
+        String temp[] = new String[userItems.size()];
+        for(int i = 0; i < userItems.size(); i++){
+            temp[i] = Items.getItemName(userItems.get(i));
+        }
+
+        return temp;
+    }
+
+    public static String[] getUsersItemsDesc(){
+        String temp[] = new String[userItems.size()];
+        for(int i = 0; i < userItems.size(); i++){
+            temp[i] = Items.getItemDesc(userItems.get(i));
+        }
+        return temp;
     }
 
     private static double numberFormat(){

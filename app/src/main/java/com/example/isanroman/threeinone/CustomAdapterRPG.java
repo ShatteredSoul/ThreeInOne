@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -48,6 +49,19 @@ public class CustomAdapterRPG extends BaseAdapter{
             convertView = inflater.inflate(R.layout.custom_list_rpg, null);
         }
         final Data row_pos = rowItem.get(position);
+
+        ImageView itemImage = (ImageView)convertView.findViewById(R.id.itemListImage);
+        TextView itemName = (TextView)convertView.findViewById(R.id.itemListName);
+        TextView itemDesc = (TextView)convertView.findViewById(R.id.itemListDesc);
+        TextView itemLevel = (TextView)convertView.findViewById(R.id.itemListLevel);
+
+        int id = Inventory.getItem(position);
+
+        itemImage.setImageResource(Items.getItemImage(id));
+        itemName.setText(Items.getItemName(id));
+        itemDesc.setText(Items.getItemDesc(id));
+        itemLevel.setText(Items.getItemLevel(id));
+
         return convertView;
     }
 }
