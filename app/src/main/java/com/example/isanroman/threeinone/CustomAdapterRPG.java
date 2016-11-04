@@ -60,7 +60,7 @@ public class CustomAdapterRPG extends BaseAdapter{
         itemImage.setImageResource(Items.getItemImage(id));
         itemName.setText(Items.getItemName(id));
         itemDesc.setText(Items.getItemDesc(id));
-        itemLevel.setText(Items.getItemLevel(id));
+        itemLevel.setText(Integer.toString(Items.getItemLevel(id)));
 
         return convertView;
     }

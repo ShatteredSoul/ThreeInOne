@@ -67,6 +67,10 @@ public class Inventory extends AppCompatActivity {
         userItems.remove(index);
     }
 
+    public static int getItemIndex(int id){
+        return userItems.indexOf(id);
+    }
+
     public static String[] getUsersItemsNames(){
         String temp[] = new String[userItems.size()];
         for(int i = 0; i < userItems.size(); i++){

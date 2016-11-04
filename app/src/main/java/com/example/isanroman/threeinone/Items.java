@@ -14,7 +14,8 @@ public class Items {
     private static Map<Integer, Integer> itemImage = new HashMap<>();
     private static Map<Integer, Integer> itemLevel = new HashMap<>();
     private static Map<Integer, Double> itemPrice = new HashMap<>();
-    public Items(String name, String desc, int id, int image, int level, double sellValue){
+
+    public static void setItems(String name, String desc, int id, int image, int level, double sellValue){
         itemNames.put(id, name);
         itemDesc.put(id, desc);
         itemImage.put(id, image);

@@ -28,7 +28,7 @@ public class ListFragmentViewRPG extends ListFragment implements AdapterView.OnI
 
     private static String[] title = Inventory.getUsersItemsNames(), desc = Inventory.getUsersItemsDesc();
 
-    CustomAdapter adapter;
+    CustomAdapterRPG adapter;
     private static List<Data> rowItems;
     private static String colors[] = {"#68E52A"};
     private static int previousPosition;
@@ -48,7 +48,7 @@ public class ListFragmentViewRPG extends ListFragment implements AdapterView.OnI
             rowItems.add(items);
         }
 
-        adapter = new CustomAdapter(getActivity(), rowItems);
+        adapter = new CustomAdapterRPG(getActivity(), rowItems);
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
     }
@@ -62,7 +62,6 @@ public class ListFragmentViewRPG extends ListFragment implements AdapterView.OnI
 
         ImageView itemImage = (ImageView)view.findViewById(R.id.itemImage);
         TextView itemDesc = (TextView)view.findViewById(R.id.itemDescription);
-        Button itemAction = (Button)view.findViewById(R.id.itemAction);
 
         Data row_pos = rowItems.get(position);
         int itemId = Items.getItemId(row_pos.getName());

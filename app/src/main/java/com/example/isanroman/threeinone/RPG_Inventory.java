@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.List;
@@ -23,6 +24,16 @@ public class RPG_Inventory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rpg_inventory);
+
+        ImageButton a = (ImageButton)findViewById(R.id.helmentImage);
+        ImageButton v = (ImageButton)findViewById(R.id.chestPlateImage);
+        ImageButton aa = (ImageButton)findViewById(R.id.legArmourImage);
+        ImageButton bb = (ImageButton)findViewById(R.id.bootsImage);
+
+        a.setBackgroundResource(R.drawable.economics_image);
+        v.setBackgroundResource(R.drawable.economics_image);
+        aa.setBackgroundResource(R.drawable.economics_image);
+        bb.setBackgroundResource(R.drawable.economics_image);
 
         Button itemAction = (Button)findViewById(R.id.itemAction);
         itemAction.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +80,7 @@ public class RPG_Inventory extends AppCompatActivity {
                         List<Data> temp = ListFragmentViewRPG.getRowItems();
                         Data tem = temp.get(ListFragmentViewRPG.getPreviousPosition());
                         Inventory.addMoney(Items.getItemPrice(Items.getItemId(tem.getName())));
+                        Inventory.removeItem(Inventory.getItemIndex(Items.getItemId(tem.getName())));
                     }else{
 
                     }

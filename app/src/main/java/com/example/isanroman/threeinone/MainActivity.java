@@ -238,5 +238,10 @@ public class MainActivity extends AppCompatActivity {
         Mines.setProductionLevel(getResources().getString(R.string.Platinum), 0);
         Mines.setProductionLevel(getResources().getString(R.string.Iron), 0);
         Mines.setProductionLevel(getResources().getString(R.string.Osmium), 0);
+
+        Items.setItems("ItemOne", "Item Desc", 001, R.drawable.economics_image, 5, 500.0);
+        Items.setItems("ItemTwo", "Item Desc", 002, R.drawable.economics_image, 5, 200.0);
+        Inventory.addItem(001);
+        Inventory.addItem(002);
     }
 }
