@@ -53,9 +53,10 @@ public class Items {
 
     public static int getItemId(String name){
         int id = 0;
-        for(int i = 0; i < itemNames.size(); i++){
-            if(itemNames.get(i).equals(name))
-                id = i;
+        for(int i = 1; i <= itemNames.size(); i++){
+            String temp = "00" + i;
+            if(itemNames.get(Integer.parseInt(temp)).equals(name))
+                id = Integer.parseInt(temp);
         }
         return id;
     }

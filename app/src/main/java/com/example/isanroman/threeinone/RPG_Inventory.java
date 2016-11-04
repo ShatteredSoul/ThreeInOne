@@ -1,6 +1,7 @@
 package com.example.isanroman.threeinone;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.MenuItem;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -39,9 +41,9 @@ public class RPG_Inventory extends AppCompatActivity {
         itemAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                start = true;
                 registerForContextMenu(v);
                 openContextMenu(v);
-                start = true;
                 vv = v;
             }
         });
@@ -60,16 +62,18 @@ public class RPG_Inventory extends AppCompatActivity {
         if(start) {
             switch (item.getItemId()) {
                 case R.id.sellItem:
-                    registerForContextMenu(vv);
-                    openContextMenu(vv);
                     start = false;
                     sell = true;
-                    break;
-                case R.id.equipItem:
+                    closeContextMenu();
                     registerForContextMenu(vv);
                     openContextMenu(vv);
+                    break;
+                case R.id.equipItem:
                     start = false;
                     equip = true;
+                    closeContextMenu();
+                    registerForContextMenu(vv);
+                    openContextMenu(vv);
                     break;
             }
         }else{
@@ -86,11 +90,6 @@ public class RPG_Inventory extends AppCompatActivity {
                     }
                     break;
                 case R.id.deny:
-                    if(sell){
-
-                    }else{
-
-                    }
                     break;
             }
         }

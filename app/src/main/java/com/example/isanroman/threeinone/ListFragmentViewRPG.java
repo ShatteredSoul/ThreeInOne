@@ -2,6 +2,7 @@ package com.example.isanroman.threeinone;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
@@ -30,7 +31,7 @@ public class ListFragmentViewRPG extends ListFragment implements AdapterView.OnI
 
     CustomAdapterRPG adapter;
     private static List<Data> rowItems;
-    private static String colors[] = {"#68E52A"};
+    private static String colors[] = {"#68E52A", "#000000"};
     private static int previousPosition;
 
     @Override
@@ -56,18 +57,20 @@ public class ListFragmentViewRPG extends ListFragment implements AdapterView.OnI
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if(!(previousPosition == position))
-            parent.getChildAt(previousPosition).setBackgroundColor(Color.parseColor(colors[0]));
+            parent.getChildAt(previousPosition).setBackgroundColor(Color.parseColor(colors[1]));
         parent.getChildAt(position).setBackgroundColor(Color.parseColor(colors[0]));
-        previousPosition = position;
+        setPreviousPosition(position);
 
-        ImageView itemImage = (ImageView)view.findViewById(R.id.itemImage);
-        TextView itemDesc = (TextView)view.findViewById(R.id.itemDescription);
+        ImageView itemImage = (ImageView)getActivity().findViewById(R.id.itemImage);
+        TextView itemDesc = (TextView)getActivity().findViewById(R.id.itemDescription);
+        Button itemAction = (Button)getActivity().findViewById(R.id.itemAction);
 
         Data row_pos = rowItems.get(position);
         int itemId = Items.getItemId(row_pos.getName());
 
         itemImage.setImageResource(Items.getItemImage(itemId));
         itemDesc.setText(Items.getItemDesc(itemId));
+        itemAction.setText("Sell/Equip");
     }
 
     private static void setPreviousPosition(int position){
