@@ -14,6 +14,8 @@ public class RPG extends AppCompatActivity{
 
         Button inventory = (Button)findViewById(R.id.inventoryButton);
         inventory.setOnClickListener(onClickListener);
+
+        
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
