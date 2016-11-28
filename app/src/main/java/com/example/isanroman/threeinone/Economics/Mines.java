@@ -1,4 +1,4 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.Economics;
 
 import android.support.v7.app.AppCompatActivity;
 

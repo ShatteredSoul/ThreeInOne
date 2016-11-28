@@ -1,4 +1,4 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.Main;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,16 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.isanroman.threeinone.Economics.EconomicsActivity;
+import com.example.isanroman.threeinone.Economics.Inventory;
+import com.example.isanroman.threeinone.Economics.Mines;
+import com.example.isanroman.threeinone.Economics.Prices;
+import com.example.isanroman.threeinone.Items;
+import com.example.isanroman.threeinone.Main_Fragment.FragmentView;
+import com.example.isanroman.threeinone.Main_Fragment.ListFragmentView;
+import com.example.isanroman.threeinone.R;
+import com.example.isanroman.threeinone.Universe;
 
 import java.util.Locale;
 

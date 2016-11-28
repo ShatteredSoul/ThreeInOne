@@ -1,4 +1,4 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.Main;
 
 /**
  * Created by Gamer-Isaiah on 10/8/2016.

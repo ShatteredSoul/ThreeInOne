@@ -1,7 +1,6 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.RPG_Inventory;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.MenuItem;
@@ -9,8 +8,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.isanroman.threeinone.Main.Data;
+import com.example.isanroman.threeinone.Economics.Inventory;
+import com.example.isanroman.threeinone.Items;
+import com.example.isanroman.threeinone.R;
 
 import java.util.List;
 
@@ -80,7 +83,7 @@ public class RPG_Inventory extends AppCompatActivity {
             switch(item.getItemId()){
                 case R.id.agree:
                     if(sell){
-                        Toast.makeText(RPG_Inventory.this, R.string.sell_successful, Toast.LENGTH_SHORT);
+                        Toast.makeText(this, R.string.sell_successful, Toast.LENGTH_SHORT);
                         List<Data> temp = ListFragmentViewRPG.getRowItems();
                         Data tem = temp.get(ListFragmentViewRPG.getPreviousPosition());
                         Inventory.addMoney(Items.getItemPrice(Items.getItemId(tem.getName())));

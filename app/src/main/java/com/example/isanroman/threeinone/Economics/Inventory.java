@@ -1,6 +1,8 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.Economics;
 
 import android.support.v7.app.AppCompatActivity;
+
+import com.example.isanroman.threeinone.Items;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;

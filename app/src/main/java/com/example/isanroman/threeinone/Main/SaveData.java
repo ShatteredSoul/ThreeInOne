@@ -1,9 +1,12 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.Main;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+
+import com.example.isanroman.threeinone.Economics.Inventory;
+import com.example.isanroman.threeinone.Economics.Mines;
+import com.example.isanroman.threeinone.Economics.Prices;
+import com.example.isanroman.threeinone.R;
 
 /**
  * Created by Gamer-Isaiah on 10/18/2016.

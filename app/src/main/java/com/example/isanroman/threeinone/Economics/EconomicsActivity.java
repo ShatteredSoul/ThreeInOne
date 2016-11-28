@@ -1,12 +1,14 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.Economics;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.isanroman.threeinone.Main.Data;
+import com.example.isanroman.threeinone.Main_Fragment.ListFragmentView;
+import com.example.isanroman.threeinone.R;
 
 import java.util.ArrayList;
 import java.util.List;

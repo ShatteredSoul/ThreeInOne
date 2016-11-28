@@ -1,22 +1,21 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.RPG_Inventory;
 
-import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
-import android.support.v7.app.AppCompatActivity;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.isanroman.threeinone.Main.Data;
+import com.example.isanroman.threeinone.Economics.Inventory;
+import com.example.isanroman.threeinone.Items;
+import com.example.isanroman.threeinone.R;
 
 import java.util.ArrayList;
 import java.util.List;

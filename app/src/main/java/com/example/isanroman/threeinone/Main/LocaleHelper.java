@@ -1,4 +1,4 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.Main;
 
 import android.content.Context;
 import android.content.SharedPreferences;

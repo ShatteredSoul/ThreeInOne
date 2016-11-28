@@ -135,5 +135,5 @@
         android:layout_toRightOf="@id/sideSpacer"
         android:layout_toEndOf="@id/sideSpacer"
         android:layout_above="@id/bottomSpacer"
-        android:name="com.example.isanroman.threeinone.ListFragmentViewRPG" />
+        android:name="com.example.isanroman.threeinone.RPG_Inventory.ListFragmentViewRPG" />
 </RelativeLayout>

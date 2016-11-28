@@ -1,8 +1,5 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.Economics;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -12,6 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.isanroman.threeinone.Main.Data;
+import com.example.isanroman.threeinone.Main_Fragment.ListFragmentView;
+import com.example.isanroman.threeinone.R;
+import com.example.isanroman.threeinone.Main.SaveData;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
