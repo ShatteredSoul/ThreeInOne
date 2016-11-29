@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.isanroman.threeinone.Main.Data;
 import com.example.isanroman.threeinone.Economics.Inventory;
-import com.example.isanroman.threeinone.Items;
+import com.example.isanroman.threeinone.RPG.Items;
 import com.example.isanroman.threeinone.R;
 
 import java.util.ArrayList;

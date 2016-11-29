@@ -33,7 +33,7 @@
                 <category android:name="android.intent.category.ALTERNATIVE"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Universe"
+        <activity android:name=".RPG.Universe"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -47,7 +47,7 @@
                 <category android:name="android.intent.category.ALTERNATIVE"/>
             </intent-filter>
         </activity>
-        <activity android:name=".OpenGL.OpenGLES20Activity"
+        <activity android:name=".RPG.RPG"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

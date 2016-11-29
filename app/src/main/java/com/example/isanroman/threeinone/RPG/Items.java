@@ -1,4 +1,4 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.RPG;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -18,11 +18,11 @@ import com.example.isanroman.threeinone.Economics.EconomicsActivity;
 import com.example.isanroman.threeinone.Economics.Inventory;
 import com.example.isanroman.threeinone.Economics.Mines;
 import com.example.isanroman.threeinone.Economics.Prices;
-import com.example.isanroman.threeinone.Items;
+import com.example.isanroman.threeinone.RPG.Items;
 import com.example.isanroman.threeinone.Main_Fragment.FragmentView;
 import com.example.isanroman.threeinone.Main_Fragment.ListFragmentView;
 import com.example.isanroman.threeinone.R;
-import com.example.isanroman.threeinone.Universe;
+import com.example.isanroman.threeinone.RPG.Universe;
 
 import java.util.Locale;
 

@@ -1,4 +1,4 @@
-package com.example.isanroman.threeinone;
+package com.example.isanroman.threeinone.RPG;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.isanroman.threeinone.OpenGL.OpenGLES20Activity;
+import com.example.isanroman.threeinone.R;
 
 /**
  * Created by isanroman on 10/26/2016.
@@ -191,7 +192,7 @@ public class Universe extends AppCompatActivity {
                 case R.id.umBackButton:
                     break;
                 case R.id.selectPlanet:
-                    Intent sp = new Intent(Universe.this, OpenGLES20Activity.class);
+                    Intent sp = new Intent(Universe.this, RPG.class);
                     startActivity(sp);
                     break;
             }
