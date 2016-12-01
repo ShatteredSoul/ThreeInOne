@@ -34,11 +34,6 @@ public class Universe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_universe);
 
-        DisplayMetrics dm = new DisplayMetrics();
-        final int width;
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        width = dm.widthPixels;
-
         galaxyNames[0] = getResources().getString(R.string.galaxyOneName);
         galaxyNames[1] = getResources().getString(R.string.galaxyTwoName);
         galaxyNames[2] = getResources().getString(R.string.galaxyThreeName);
@@ -194,6 +189,7 @@ public class Universe extends AppCompatActivity {
                 case R.id.selectPlanet:
                     Intent sp = new Intent(Universe.this, RPG.class);
                     startActivity(sp);
+                    RPG.running = true;
                     break;
             }
         }
